@@ -11,6 +11,10 @@
 
 适用于小红书、抖音、TikTok、Reels、Shorts、产品发布、知识分享、教程、数据短片和可批量复用的品牌栏目。
 
+## 官网
+
+波普艺术静态官网位于 [`website/`](website/)。它不依赖框架或远程运行时，可直接打开 [`website/index.html`](website/index.html) 本地预览，也可在完成公开内容审核后部署到 GitHub Pages 等静态托管服务。
+
 ## 为什么是 Agentic Video Foundry
 
 - **成片负责制**：终点是看过、听过、测过的发布文件，不是中间产物。
