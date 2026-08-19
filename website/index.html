@@ -1,241 +1,146 @@
 <!doctype html>
-<html lang="zh-CN">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta
-      name="description"
-      content="Agentic Video Foundry：把创意、真实演示、配音、音乐、字幕、逐帧合成和质检串成可复现的短视频生产线。"
-    />
-    <meta name="theme-color" content="#fff7e8" />
-    <title>Agentic Video Foundry｜一句需求，到可交付成片</title>
-    <link rel="icon" href="data:," />
+    <meta http-equiv="content-language" content="en" />
+    <meta name="description" content="Agentic Video Foundry is an open-source Agent Skill that turns a creative brief into a verified short video with storyboards, real demos, voice, music, captions, deterministic rendering, and quality control." />
+    <meta name="keywords" content="Agentic Video Foundry, Agent Skill, Codex video, Remotion workflow, AI video production, short video automation" />
+    <meta name="author" content="ZetaZeroHub" />
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
+    <meta name="theme-color" content="#ffd400" />
+    <link rel="canonical" href="https://video.zzh.app/" />
+    <link rel="alternate" hreflang="en" href="https://video.zzh.app/" />
+    <link rel="alternate" hreflang="zh-Hans" href="https://video.zzh.app/zh/" />
+    <link rel="alternate" hreflang="x-default" href="https://video.zzh.app/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Agentic Video Foundry" />
+    <meta property="og:title" content="Agentic Video Foundry — From Brief to Verified Video" />
+    <meta property="og:description" content="An open-source Agent Skill for scripting, real demos, audio, deterministic rendering, subtitles, QC, and editable video delivery." />
+    <meta property="og:url" content="https://video.zzh.app/" />
+    <meta property="og:image" content="https://video.zzh.app/assets/og-cover.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:locale:alternate" content="zh_CN" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Agentic Video Foundry — From Brief to Verified Video" />
+    <meta name="twitter:description" content="A reusable Agent Skill for producing short videos with real evidence, precise audio timing, deterministic rendering, and hard QC gates." />
+    <meta name="twitter:image" content="https://video.zzh.app/assets/og-cover.png" />
+    <title>AI Video Production Agent Skill | Agentic Video Foundry</title>
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <link rel="apple-touch-icon" href="./assets/apple-touch-icon.png" />
+    <link rel="manifest" href="./site.webmanifest" />
     <link rel="stylesheet" href="./styles.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "SoftwareApplication",
+            "@id": "https://video.zzh.app/#software",
+            "name": "Agentic Video Foundry",
+            "applicationCategory": "MultimediaApplication",
+            "operatingSystem": "Cross-platform coding agents",
+            "description": "An open-source Agent Skill that turns a creative brief into a verified short video production pipeline.",
+            "url": "https://video.zzh.app/",
+            "downloadUrl": "https://github.com/ZetaZeroHub/agentic-video-foundry",
+            "codeRepository": "https://github.com/ZetaZeroHub/agentic-video-foundry",
+            "license": "https://github.com/ZetaZeroHub/agentic-video-foundry/blob/main/LICENSE",
+            "isAccessibleForFree": true,
+            "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+            "inLanguage": ["en", "zh-Hans"]
+          },
+          {
+            "@type": "HowTo",
+            "@id": "https://video.zzh.app/#install",
+            "name": "How to install Agentic Video Foundry globally",
+            "totalTime": "PT2M",
+            "supply": [{ "@type": "HowToSupply", "name": "Node.js and npx" }],
+            "step": [
+              { "@type": "HowToStep", "position": 1, "name": "Run the install command", "text": "Run npx skills add ZetaZeroHub/agentic-video-foundry@agentic-video-foundry -g -y in a terminal." },
+              { "@type": "HowToStep", "position": 2, "name": "Restart your coding agent", "text": "Restart Codex, Claude Code, Gemini CLI, or another Agent Skills compatible tool." },
+              { "@type": "HowToStep", "position": 3, "name": "Describe the video", "text": "Invoke $agentic-video-foundry and provide the goal, platform, duration, source material, and desired style." }
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "@id": "https://video.zzh.app/#faq",
+            "mainEntity": [
+              { "@type": "Question", "name": "What is Agentic Video Foundry?", "acceptedAnswer": { "@type": "Answer", "text": "Agentic Video Foundry is an open-source Agent Skill that coordinates briefing, storyboarding, real product demos, voice, music, sound effects, subtitles, deterministic rendering, visual review, audio measurement, and editable delivery." } },
+              { "@type": "Question", "name": "Which coding agents can use it?", "acceptedAnswer": { "@type": "Answer", "text": "It is designed for tools that support the Agent Skills convention, including Codex, Claude Code, Gemini CLI, and compatible agent environments." } },
+              { "@type": "Question", "name": "Does the public repository include paid media or API keys?", "acceptedAnswer": { "@type": "Answer", "text": "No. Credentials are read from the operating system keychain or environment variables, and paid or private media stays outside Git history. Public deployment media is packaged separately after approval." } },
+              { "@type": "Question", "name": "Which renderer does Agentic Video Foundry use?", "acceptedAnswer": { "@type": "Answer", "text": "Remotion is the default master timeline. Text-to-Lottie can supply vector assets, HyperFrames can produce HTML and GSAP scenes, and optional scene libraries are vendored into the project when appropriate." } }
+            ]
+          }
+        ]
+      }
+    </script>
     <script src="./site.js" defer></script>
   </head>
   <body>
-    <a class="skip-link" href="#main">跳到主要内容</a>
-
+    <a class="skip-link" href="#main">Skip to content</a>
     <header class="site-header" data-header>
-      <a class="brand" href="#top" aria-label="Agentic Video Foundry 首页">
-        <span class="brand-mark" aria-hidden="true">AV</span>
-        <span>AGENTIC VIDEO FOUNDRY</span>
-      </a>
-      <nav class="site-nav" aria-label="主要导航">
-        <a href="#workflow">工作流</a>
-        <a href="#evidence">真实证据</a>
-        <a href="#case-study">案例</a>
-        <a href="https://github.com/kinglegendzzh/agentic-video-foundry">GitHub</a>
-        <a class="nav-cta" href="#install">安装 Skill</a>
+      <a class="brand" href="#top" aria-label="Agentic Video Foundry home"><span class="brand-mark" aria-hidden="true">AV</span><span>AGENTIC VIDEO FOUNDRY</span></a>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="#workflow">Workflow</a><a href="#evidence">Watch</a><a href="#case-study">Case study</a><a href="https://github.com/ZetaZeroHub/agentic-video-foundry">GitHub</a><a class="language-link" href="./zh/" lang="zh-Hans" hreflang="zh-Hans">中文</a><a class="nav-cta" href="#install">Install Skill</a>
       </nav>
     </header>
-
     <main id="main">
       <section class="hero" id="top" aria-labelledby="hero-title">
         <div class="hero-copy">
-          <p class="eyebrow">这套 Skill 正在剪自己</p>
-          <h1 id="hero-title">
-            一句需求
-            <span>到可交付成片</span>
-          </h1>
-          <p class="hero-lead">
-            脚本、画风、真实演示、配音、音乐、逐帧合成、质检与分轨交付，收进一条可复用的视频生产线。
-          </p>
-          <div class="hero-actions">
-            <a class="button button-primary" href="#install">立即安装</a>
-            <a class="button button-secondary" href="#evidence">看真实流程</a>
-          </div>
+          <p class="eyebrow">THIS SKILL IS EDITING ITS OWN LAUNCH VIDEO</p>
+          <h1 id="hero-title">One brief<span>to a verified video</span></h1>
+          <p class="hero-lead">Agentic Video Foundry is an open-source Agent Skill that turns scripting, real product demos, voice, music, subtitles, deterministic rendering, and quality control into one reusable production pipeline.</p>
+          <div class="hero-actions"><a class="button button-primary" href="#install">Install now</a><a class="button button-secondary" href="#evidence">Watch the output</a></div>
           <p class="compatibility">Codex · Claude Code · Gemini CLI · Agent Skills</p>
         </div>
-
-        <div class="hero-stage" aria-label="Agentic Video Foundry 制作流程示意">
+        <div class="hero-stage" aria-label="Agentic Video Foundry production workflow">
           <div class="browser-card">
-            <div class="browser-dots" aria-hidden="true">
-              <i></i><i></i><i></i>
-            </div>
-            <p class="terminal-line">
-              <span class="terminal-prompt">$</span>
-              使用 Agentic Video Foundry，制作一条介绍你自己的宣传片。
-            </p>
-            <div class="build-status">
-              <span class="status-dot" aria-hidden="true"></span>
-              <strong>正在生成可审计的视频工程</strong>
-            </div>
-            <ol class="build-steps" aria-label="制作步骤">
-              <li class="is-done">brief</li>
-              <li class="is-done">storyboard</li>
-              <li class="is-done">voice</li>
-              <li class="is-active">timeline</li>
-              <li>render</li>
-              <li>audit</li>
-            </ol>
-            <div class="mini-output">
-              <span>9 段独立 MP4</span>
-              <span>4 轨可编辑音频</span>
-            </div>
+            <div class="browser-dots" aria-hidden="true"><i></i><i></i><i></i></div>
+            <p class="terminal-line"><span class="terminal-prompt">$</span> Use Agentic Video Foundry to produce a launch video about itself.</p>
+            <div class="build-status"><span class="status-dot" aria-hidden="true"></span><strong>Building an auditable video project</strong></div>
+            <ol class="build-steps" aria-label="Production stages"><li class="is-done">brief</li><li class="is-done">storyboard</li><li class="is-done">voice</li><li class="is-active">timeline</li><li>render</li><li>audit</li></ol>
+            <div class="mini-output"><span>9 standalone MP4s</span><span>4 editable audio stems</span></div>
           </div>
-          <div class="burst burst-one" aria-hidden="true">真实演示！</div>
-          <div class="burst burst-two" aria-hidden="true">逐帧可复现</div>
+          <div class="burst burst-one" aria-hidden="true">REAL DEMOS!</div><div class="burst burst-two" aria-hidden="true">FRAME-ACCURATE</div>
         </div>
       </section>
-
-      <section class="proof-strip" aria-label="核心能力数字">
-        <article><strong>1</strong><span>个主时间轴</span></article>
-        <article><strong>2</strong><span>套音频后端</span></article>
-        <article><strong>3</strong><span>类场景路线</span></article>
-        <article><strong>9</strong><span>段模块化成片</span></article>
-      </section>
-
+      <section class="proof-strip" aria-label="Core capability numbers"><article><strong>1</strong><span>master timeline</span></article><article><strong>2</strong><span>audio providers</span></article><article><strong>3</strong><span>scene routes</span></article><article><strong>9</strong><span>modular exports</span></article></section>
       <section class="section workflow-section" id="workflow" aria-labelledby="workflow-title">
-        <div class="section-heading">
-          <div>
-            <p class="section-kicker">THE WORKFLOW</p>
-            <h2 id="workflow-title">不是堆特效<br />是做出证据链</h2>
-          </div>
-          <p>
-            每个能力都对应一个真实动作和真实产物。动效只负责解释、裁切和聚焦，不替代本该出现的产品演示。
-          </p>
-        </div>
-
+        <div class="section-heading"><div><p class="section-kicker">THE WORKFLOW</p><h2 id="workflow-title">Not a pile of effects.<br />A chain of evidence.</h2></div><p>Every capability maps to a real action and a real deliverable. Motion explains, crops, and focuses; it never replaces the product evidence that should be on screen.</p></div>
         <div class="workflow-grid">
-          <article class="workflow-card card-paper">
-            <span class="card-number">01</span>
-            <p class="card-label">BRIEF</p>
-            <h3>诊断任务</h3>
-            <p>锁定受众、平台、时长、传播结论、CTA 与必须出现的证据。</p>
-            <ul><li>一句话目标</li><li>证据计划</li><li>明确排除项</li></ul>
-          </article>
-          <article class="workflow-card card-cyan">
-            <span class="card-number">02</span>
-            <p class="card-label">DESIGN</p>
-            <h3>分镜与画风</h3>
-            <p>先定义镜头任务，再选择手撕纸、波普艺术或真实产品演示。</p>
-            <ul><li>每镜一个 Hero</li><li>风格 preset</li><li>代表帧</li></ul>
-          </article>
-          <article class="workflow-card card-yellow">
-            <span class="card-number">03</span>
-            <p class="card-label">AUDIO</p>
-            <h3>试听后定稿</h3>
-            <p>ElevenLabs 与火山豆包语音可切换，真实旁白时长驱动时间轴。</p>
-            <ul><li>同稿试听</li><li>词级对齐</li><li>可感知 BGM</li></ul>
-          </article>
-          <article class="workflow-card card-red">
-            <span class="card-number">04</span>
-            <p class="card-label">ROUTING</p>
-            <h3>场景各司其职</h3>
-            <p>Remotion 管主时间轴，Lottie 和 HyperFrames 只做合适的支线场景。</p>
-            <ul><li>单一主链</li><li>冻结交换资产</li><li>最终复验</li></ul>
-          </article>
-          <article class="workflow-card card-blue">
-            <span class="card-number">05</span>
-            <p class="card-label">RENDER</p>
-            <h3>确定性合成</h3>
-            <p>帧驱动动画、字幕、音效落点和批量变体都能稳定复现。</p>
-            <ul><li>时间轴数据化</li><li>无随机漂移</li><li>静帧预检</li></ul>
-          </article>
-          <article class="workflow-card card-white">
-            <span class="card-number">06</span>
-            <p class="card-label">DELIVERY</p>
-            <h3>验收再交付</h3>
-            <p>完整观看、手机外放、编码、响度、真峰值与 manifest 缺一不可。</p>
-            <ul><li>视觉 QA</li><li>声音 QA</li><li>可编辑资产</li></ul>
-          </article>
+          <article class="workflow-card card-paper"><span class="card-number">01</span><p class="card-label">BRIEF</p><h3>Diagnose the job</h3><p>Lock the audience, platform, duration, message, CTA, and evidence the viewer must see.</p><ul><li>One-line goal</li><li>Evidence plan</li><li>Explicit exclusions</li></ul></article>
+          <article class="workflow-card card-cyan"><span class="card-number">02</span><p class="card-label">DESIGN</p><h3>Storyboard and style</h3><p>Give every shot one job, then choose paper collage, pop art, or a real product demonstration.</p><ul><li>One hero per shot</li><li>Style preset</li><li>Representative frames</li></ul></article>
+          <article class="workflow-card card-yellow"><span class="card-number">03</span><p class="card-label">AUDIO</p><h3>Preview before final</h3><p>Switch between ElevenLabs and Volcengine. Real narration timestamps drive the timeline.</p><ul><li>Same-script audition</li><li>Word alignment</li><li>Audible BGM</li></ul></article>
+          <article class="workflow-card card-red"><span class="card-number">04</span><p class="card-label">ROUTING</p><h3>Use each tool for its strength</h3><p>Remotion owns the master timeline. Lottie and HyperFrames serve only the scenes they fit.</p><ul><li>One master chain</li><li>Frozen exchange assets</li><li>Final revalidation</li></ul></article>
+          <article class="workflow-card card-blue"><span class="card-number">05</span><p class="card-label">RENDER</p><h3>Deterministic composition</h3><p>Frame-driven motion keeps captions, sound cues, and batch variants reproducible.</p><ul><li>Data timeline</li><li>No random drift</li><li>Still-frame preflight</li></ul></article>
+          <article class="workflow-card card-white"><span class="card-number">06</span><p class="card-label">DELIVERY</p><h3>Verify before shipping</h3><p>Full watch-through, phone-speaker review, encoding, loudness, true peak, and manifests are hard gates.</p><ul><li>Visual QA</li><li>Audio QA</li><li>Editable assets</li></ul></article>
         </div>
       </section>
-
       <section class="section evidence-section" id="evidence" aria-labelledby="evidence-title">
-        <div class="section-heading evidence-heading">
-          <div>
-            <p class="section-kicker">REAL EVIDENCE</p>
-            <h2 id="evidence-title">真实界面做主角</h2>
-          </div>
-          <p>真实 UI 内部不加漫画滤镜。波普图形只负责边框、标签、聚焦与转场。</p>
-        </div>
-
+        <div class="section-heading evidence-heading"><div><p class="section-kicker">WATCH THE OUTPUT</p><h2 id="evidence-title">Let the finished video prove it</h2></div><p>Scroll the player into view and the approved master starts muted. This is the real delivery produced by the workflow, not a concept animation made only for the website.</p></div>
         <div class="evidence-layout">
-          <div class="evidence-terminal" aria-label="真实工程命令示例">
-            <div class="terminal-header"><span>foundry / production</span><span>● ready</span></div>
-            <code><b>$</b> npm run timeline</code>
-            <p>✓ timeline.json generated from timestamped voice</p>
-            <code><b>$</b> npm run stills</code>
-            <p>✓ representative frames rendered</p>
-            <code><b>$</b> npm run render</code>
-            <p>✓ raw composition encoded</p>
-            <code><b>$</b> audit-video-project.mjs --strict</code>
-            <p>✓ structure · secrets · manifests · streams</p>
+          <div class="evidence-video-card" data-video-card>
+            <div class="evidence-video-toolbar"><span>FINAL CUT / V6</span><span class="video-state" data-video-state>Waiting for viewport</span></div>
+            <div class="evidence-video-frame"><video data-evidence-video muted playsinline preload="metadata" aria-label="Complete Agentic Video Foundry launch video"><source src="./assets/agentic-video-foundry-demo.mp4" type="video/mp4" />Your browser does not support HTML5 video.</video><div class="video-badge">AUTOPLAYS IN VIEW · MUTED</div><div class="video-controls" aria-label="Video controls"><button type="button" data-video-toggle aria-label="Play video">Play</button><button type="button" data-video-mute aria-label="Turn video sound on">Sound on</button></div></div>
+            <p class="evidence-video-caption">From brief, real demos, voice, and music to frame-accurate composition, captions, stems, and QC—the complete 168-second master is here.</p>
           </div>
-
-          <div class="evidence-notes">
-            <article>
-              <strong>75%–88%</strong>
-              <h3>画面交给真实操作</h3>
-              <p>Codex、终端、文件、播放器和最终成片，而不是虚构界面。</p>
-            </article>
-            <article>
-              <strong>1 HERO</strong>
-              <h3>一次只证明一件事</h3>
-              <p>放大一个证据区域，标题负责结论，字幕不遮挡操作。</p>
-            </article>
-            <article>
-              <strong>2 CUTS</strong>
-              <h3>限制转场家族</h3>
-              <p>Panel cut 与 ink wipe 足够。拒绝刺啦、闪白和技术栈炫技。</p>
-            </article>
-          </div>
+          <div class="evidence-notes"><article><strong>168 SEC</strong><h3>A complete film, not a mockup</h3><p>The hook, workflow, editable delivery, and real case study share one master timeline.</p></article><article><strong>9 SCENES</strong><h3>Every chapter can stand alone</h3><p>Each scene can export as its own MP4 with narration, BGM, SFX, case audio, and captions.</p></article><article><strong>PASS</strong><h3>Hard gates before delivery</h3><p>1080×1920, 30 fps, loudness, true peak, captions, and edit-point noise are checked.</p></article></div>
         </div>
       </section>
-
-      <section class="section self-demo" aria-labelledby="self-demo-title">
-        <div class="self-demo-copy">
-          <p class="section-kicker">THE META DEMO</p>
-          <h2 id="self-demo-title">用自己<br />剪自己</h2>
-          <p>
-            这条宣传片从同一个 Skill、同一份脚本和同一个主时间轴产生。提示词、设计决策、真实录屏、声音、渲染和验收都能回到实际产物。
-          </p>
-        </div>
-        <div class="loop-diagram" aria-label="自我演示闭环">
-          <span>需求</span><i aria-hidden="true">→</i><span>Skill</span><i aria-hidden="true">→</i><span>工程</span><i aria-hidden="true">→</i><span>成片</span><i aria-hidden="true">↺</i>
-        </div>
-      </section>
-
+      <section class="section self-demo" aria-labelledby="self-demo-title"><div class="self-demo-copy"><p class="section-kicker">THE META DEMO</p><h2 id="self-demo-title">The Skill<br />edits itself</h2><p>This launch video comes from the same Skill, script, and master timeline it promotes. Prompts, design decisions, screen recordings, audio, renders, and acceptance evidence all map back to real project assets.</p></div><div class="loop-diagram" aria-label="Self-demonstrating production loop"><span>Brief</span><i aria-hidden="true">→</i><span>Skill</span><i aria-hidden="true">→</i><span>Project</span><i aria-hidden="true">→</i><span>Video</span><i aria-hidden="true">↺</i></div></section>
       <section class="section case-section" id="case-study" aria-labelledby="case-title">
-        <div class="section-heading case-heading">
-          <div>
-            <p class="section-kicker">CASE STUDY</p>
-            <h2 id="case-title">先证明流程<br />再证明结果</h2>
-          </div>
-          <p>同一套工作流用于组织 AI 游戏平台宣传片的素材、画面、声音和节奏。</p>
-        </div>
-        <div class="case-panels" aria-label="AI 游戏平台宣传片内容概览">
-          <article class="case-panel case-pink"><span>01</span><h3>创作游戏<br />如此简单</h3><p>用高反差钩子建立问题。</p></article>
-          <article class="case-panel case-cyan"><span>02</span><h3>一句话<br />重塑万物</h3><p>把能力压缩成可理解的操作。</p></article>
-          <article class="case-panel case-yellow"><span>03</span><h3>真实可玩<br />结果</h3><p>用最终体验完成证据闭环。</p></article>
-        </div>
-        <p class="case-note">案例媒体不随公开 Skill 仓库分发；官网只陈述经验证的制作范围。</p>
+        <div class="section-heading case-heading"><div><p class="section-kicker">CASE STUDY</p><h2 id="case-title">Prove the process.<br />Then prove the result.</h2></div><p>The same workflow organized the footage, motion, sound, and pacing of an AI game platform launch film.</p></div>
+        <div class="case-panels" aria-label="AI game platform launch film overview"><article class="case-panel case-pink"><span>01</span><h3>Create games.<br />This simple.</h3><p>A high-contrast hook establishes the problem.</p></article><article class="case-panel case-cyan"><span>02</span><h3>One prompt.<br />A new world.</h3><p>The product capability becomes a visible action.</p></article><article class="case-panel case-yellow"><span>03</span><h3>A real,<br />playable result.</h3><p>The final experience closes the evidence loop.</p></article></div>
+        <p class="case-note">Paid and private case media is not distributed through the public Skill repository. The site shows only approved deployment media and verified production facts.</p>
       </section>
-
-      <section class="section install-section" id="install" aria-labelledby="install-title">
-        <div>
-          <p class="eyebrow">MIT · OPEN SOURCE</p>
-          <h2 id="install-title">装上它<br />开始下一条</h2>
-          <p>全局安装后，在支持 Agent Skills 的工具中直接描述你的目标、平台、时长、素材和风格。</p>
-        </div>
-        <div class="install-panel">
-          <p>全局安装</p>
-          <pre><code data-install-command>npx skills add kinglegendzzh/agentic-video-foundry@agentic-video-foundry -g -y</code></pre>
-          <button class="copy-button" type="button" data-copy-button aria-describedby="copy-status">
-            复制安装命令
-          </button>
-          <p class="copy-status" id="copy-status" role="status" aria-live="polite"></p>
-          <a class="repo-link" href="https://github.com/kinglegendzzh/agentic-video-foundry">查看 GitHub 仓库 →</a>
-        </div>
+      <section class="section faq-section" id="faq" aria-labelledby="faq-title">
+        <div class="section-heading"><div><p class="section-kicker">FAQ</p><h2 id="faq-title">What teams ask before installing</h2></div><p>Direct answers about compatibility, rendering, credentials, and what “done” means in this workflow.</p></div>
+        <div class="faq-grid"><article><h3>What is Agentic Video Foundry?</h3><p>It is an open-source Agent Skill that coordinates briefing, storyboarding, real demos, narration, music, sound effects, subtitles, rendering, visual review, audio measurement, and editable delivery.</p></article><article><h3>Which coding agents can use it?</h3><p>It targets tools that follow the Agent Skills convention, including Codex, Claude Code, Gemini CLI, and compatible agent environments.</p></article><article><h3>Which renderer owns the timeline?</h3><p>Remotion is the default master compositor. Text-to-Lottie and HyperFrames are optional asset or scene routes, not competing master timelines.</p></article><article><h3>Are API keys or paid media public?</h3><p>No. Credentials stay in the OS keychain or environment variables. Paid and private media remains outside Git history and enters only separately approved deployment packages.</p></article></div>
       </section>
+      <section class="section install-section" id="install" aria-labelledby="install-title"><div><p class="eyebrow">MIT · OPEN SOURCE</p><h2 id="install-title">Install the workflow.<br />Ship the next film.</h2><p>Install globally, then describe the goal, platform, duration, source material, and visual direction in any compatible Agent Skills tool.</p></div><div class="install-panel"><p>Global install</p><pre><code data-install-command>npx skills add ZetaZeroHub/agentic-video-foundry@agentic-video-foundry -g -y</code></pre><button class="copy-button" type="button" data-copy-button aria-describedby="copy-status">Copy install command</button><p class="copy-status" id="copy-status" role="status" aria-live="polite"></p><a class="repo-link" href="https://github.com/ZetaZeroHub/agentic-video-foundry">View the GitHub repository →</a></div></section>
     </main>
-
-    <footer class="site-footer">
-      <span>AGENTIC VIDEO FOUNDRY</span>
-      <span>一句需求 → 可交付成片</span>
-      <a href="https://github.com/kinglegendzzh/agentic-video-foundry/blob/main/LICENSE">MIT License</a>
-    </footer>
+    <footer class="site-footer"><span>AGENTIC VIDEO FOUNDRY</span><span>One brief → verified video</span><a href="https://github.com/ZetaZeroHub/agentic-video-foundry/blob/main/LICENSE">MIT License</a></footer>
   </body>
 </html>

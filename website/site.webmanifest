@@ -1,0 +1,12 @@
+{
+  "name": "Agentic Video Foundry",
+  "short_name": "AV Foundry",
+  "description": "Open-source Agent Skill for verified short-video production.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fff7e8",
+  "theme_color": "#ffd400",
+  "icons": [
+    { "src": "/assets/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" }
+  ]
+}

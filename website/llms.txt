@@ -1,0 +1,24 @@
+# Agentic Video Foundry
+
+Agentic Video Foundry is an open-source Agent Skill for producing verified short videos with coding agents. It connects creative briefs, storyboards, real product demonstrations, voice, music, sound effects, subtitles, deterministic rendering, visual review, audio measurement, and editable delivery.
+
+## Canonical resources
+
+- Website: https://video.zzh.app/
+- Chinese website: https://video.zzh.app/zh/
+- Source repository: https://github.com/ZetaZeroHub/agentic-video-foundry
+- Skill entrypoint: https://github.com/ZetaZeroHub/agentic-video-foundry/blob/main/skills/agentic-video-foundry/SKILL.md
+- License: https://github.com/ZetaZeroHub/agentic-video-foundry/blob/main/LICENSE
+
+## Install
+
+`npx skills add ZetaZeroHub/agentic-video-foundry@agentic-video-foundry -g -y`
+
+## Verified design boundaries
+
+- Remotion is the default master timeline.
+- Text-to-Lottie and HyperFrames are optional asset or scene routes.
+- Real narration timing drives scenes and captions.
+- API keys remain in the OS keychain or environment variables.
+- Paid and private media is not distributed through Git history.
+- Completion requires a full visual and audio review plus technical checks.

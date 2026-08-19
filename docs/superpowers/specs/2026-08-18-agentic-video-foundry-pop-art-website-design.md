@@ -115,7 +115,7 @@ audit-video-project.mjs --strict
 安装命令：
 
 ```bash
-npx skills add kinglegendzzh/agentic-video-foundry@agentic-video-foundry -g -y
+npx skills add ZetaZeroHub/agentic-video-foundry@agentic-video-foundry -g -y
 ```
 
 提供复制按钮、GitHub 链接、MIT License、兼容工具说明。复制失败时保留可手动选择的纯文本命令，并显示可读状态提示。

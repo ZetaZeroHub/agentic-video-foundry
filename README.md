@@ -1,126 +1,130 @@
 # Agentic Video Foundry ⚡️
 
-> 把一句创意，锻造成一条真正能发布的短视频。
+> Turn one creative brief into a short video that is actually ready to publish.
 
-[![Agent Skill](https://img.shields.io/badge/Agent%20Skill-Codex%20%7C%20Claude%20Code%20%7C%20Gemini-7C3AED)](#安装)
+[简体中文](README.zh-CN.md) · **English**
+
+[![Agent Skill](https://img.shields.io/badge/Agent%20Skill-Codex%20%7C%20Claude%20Code%20%7C%20Gemini-7C3AED)](#install)
 [![License: MIT](https://img.shields.io/badge/License-MIT-22C55E.svg)](LICENSE)
-[![Renderers](https://img.shields.io/badge/Renderers-Remotion%20%7C%20HyperFrames-06B6D4)](#智能场景路由)
-[![Audio](https://img.shields.io/badge/Audio-ElevenLabs%20%7C%20Volcengine-F97316)](#声音不是附属品)
+[![Renderers](https://img.shields.io/badge/Renderers-Remotion%20%7C%20HyperFrames-06B6D4)](#scene-routing)
+[![Audio](https://img.shields.io/badge/Audio-ElevenLabs%20%7C%20Volcengine-F97316)](#audio-is-not-an-afterthought)
 
-**Agentic Video Foundry**（智能视频铸造厂）是一套面向 coding agents 的全流程短视频生产 Skill。它不会在“脚本写完了”或“渲染命令成功了”时提前宣布完成，而是把创意、分镜、配音、音乐、音效、字幕、动效、混音、渲染、视听质检和交付串成一条可复现的生产线。
+**Agentic Video Foundry** is an open-source, end-to-end video production Skill for coding agents. It does not declare victory when a script is written or a render command exits successfully. It connects the brief, storyboard, voice, music, sound effects, captions, motion, mix, render, audiovisual review, and editable delivery into one reproducible pipeline.
 
-适用于小红书、抖音、TikTok、Reels、Shorts、产品发布、知识分享、教程、数据短片和可批量复用的品牌栏目。
+It is designed for short-form social videos, product launches, explainers, tutorials, data stories, and reusable branded series on TikTok, Reels, Shorts, Douyin, Xiaohongshu, and Bilibili.
 
-## 官网
+## Website
 
-波普艺术静态官网位于 [`website/`](website/)。它不依赖框架或远程运行时，可直接打开 [`website/index.html`](website/index.html) 本地预览，也可在完成公开内容审核后部署到 GitHub Pages 等静态托管服务。
+The bilingual pop-art website lives in [`website/`](website/): English is the default at `/`, and Simplified Chinese is available at `/zh/`. It is dependency-free and includes canonical URLs, reciprocal hreflang, Open Graph and Twitter metadata, JSON-LD, `robots.txt`, `sitemap.xml`, and `llms.txt`.
 
-## 为什么是 Agentic Video Foundry
+The public deployment is designed for [video.zzh.app](https://video.zzh.app/). Approved showcase media is packaged separately and intentionally remains outside Git history.
 
-- **成片负责制**：终点是看过、听过、测过的发布文件，不是中间产物。
-- **声音驱动时间轴**：真实旁白时间戳生成场景与字幕，拒绝估算和机械加速。
-- **双音频后端**：ElevenLabs 与火山豆包语音可按旁白、音乐、音效分别选择，工程层不绑定供应商。
-- **真实 Demo 优先**：工具介绍片用真实界面、命令和输出证明能力，动效只负责聚焦与解释。
-- **智能场景路由**：Remotion、Text-to-Lottie、HyperFrames 和 Remotion Scenes 各做擅长的事。
-- **渐进式风格模块**：主 Skill 只做风格选择，选中后才加载具体材质、排版、运动语法和硬失败项。
-- **可听见的音乐**：BGM 在手机外放上有存在感，同时不遮住人声。
-- **可复现与可审计**：固定依赖、素材哈希、无密钥 manifest、确定性逐帧动画。
-- **质量硬闸门**：代表帧、平台安全区、完整视听、LUFS、dBTP、编码参数一个都不少。
-- **经验会进化**：偶发问题先进入 `.learnings/`，重复验证后再晋升为规则或 Skill。
+## Why Agentic Video Foundry
 
-## 一条真正闭环的生产线
+- **Finished-video ownership**: the endpoint is a watched, heard, and measured publishing file—not an intermediate artifact.
+- **Narration-driven timing**: real voice timestamps drive scenes and captions; mechanical speed-up cannot hide an overlong script.
+- **Two audio backends**: ElevenLabs and Volcengine can be routed independently for voice, music, and sound effects.
+- **Real demos first**: product videos prove capability with real interfaces, commands, and outputs.
+- **One master timeline**: Remotion owns the final composition; other tools provide bounded scene or asset routes.
+- **Progressive style modules**: the core Skill selects a style and only then loads its material, typography, motion, and failure rules.
+- **Audible music**: BGM must survive phone speakers without masking the narration.
+- **Reproducible and auditable**: fixed dependencies, asset hashes, secret-free manifests, and deterministic frame animation.
+- **Hard quality gates**: representative frames, platform safe areas, captions, full viewing, LUFS, dBTP, and encoding checks.
+- **Learning without pollution**: isolated findings enter `.learnings/` first and become durable rules only after repeated validation.
+
+## End-to-end pipeline
 
 ```mermaid
 flowchart LR
-  A["Brief + 素材"] --> B["剧本 + 节奏图"]
-  B --> C["声线试听"]
-  C --> D["时间戳旁白"]
-  D --> E["场景路由"]
+  A["Brief + source material"] --> B["Script + pacing map"]
+  B --> C["Voice audition"]
+  C --> D["Timestamped narration"]
+  D --> E["Scene routing"]
   E --> F["Remotion"]
   E --> G["Text-to-Lottie"]
   E --> H["HyperFrames"]
-  E --> I["Remotion Scenes"]
-  F --> J["主时间轴"]
-  G --> J
-  H --> J
-  I --> J
-  J --> K["BGM + SFX + 字幕"]
-  K --> L["代表帧质检"]
-  L --> M["完整渲染 + 母带检测"]
-  M --> N["MP4 + 封面 + 发布文案"]
-  N --> O[".learnings"]
+  F --> I["Master timeline"]
+  G --> I
+  H --> I
+  I --> J["BGM + SFX + captions"]
+  J --> K["Representative-frame review"]
+  K --> L["Full render + master measurement"]
+  L --> M["MP4 + cover + publishing copy"]
+  M --> N[".learnings"]
 ```
 
-## 智能场景路由
+## Scene routing
 
-| 能力 | 最适合 | Foundry 中的角色 |
+| Capability | Best for | Role inside Foundry |
 |---|---|---|
-| **Remotion** | 多场景、React、数据模板、旁白/字幕精确同步 | 默认主合成器 |
-| **Text-to-Lottie** | Logo、图标、流程、KPI、微交互、透明矢量循环 | 可选资产支线，先 Skottie 后最终渲染器双验收 |
-| **HyperFrames** | HTML/CSS/GSAP、网页素材、动态图表、DOM 动效 | 可选场景或项目后端 |
-| **Remotion Scenes** | 快速复用 React/TSX 动效场景 | 按项目固定版本并 vendoring，不冒充 Skill |
+| **Remotion** | Multi-scene React video, data templates, exact voice and caption sync | Default master compositor |
+| **Text-to-Lottie** | Logos, icons, process diagrams, KPI motion, transparent vector loops | Optional asset route; validate in Skottie and the final renderer |
+| **HyperFrames** | HTML/CSS/GSAP, web assets, dynamic charts, DOM motion | Optional scene or project backend |
+| **Remotion Scenes** | Reusable React/TSX motion scenes | Pin and vendor per project; do not present it as an Agent Skill |
 
-Agentic Video Foundry 不鼓励“为了技术栈全家桶而混用”。每个镜头先做需求路由，最终由一个主时间轴收口。
+The router does not reward technology-stack variety. Every shot is routed by its actual requirement, and one master timeline closes the project.
 
-## 可扩展风格模块
+## Progressive style modules
 
-风格不是一组散乱滤镜，而是材质、配色、排版、证据处理、运动语法、转场和失败条件的完整契约。Foundry 使用渐进式披露：先读取[风格路由](skills/agentic-video-foundry/references/style-routing.md)，选中后才加载具体模块。
+Style is a contract across material, palette, typography, evidence treatment, motion grammar, transitions, and failure conditions. The core Skill reads the [style router](skills/agentic-video-foundry/references/style-routing.md) first and opens a detailed module only after a route is selected.
 
-内置模块包括：
+Built-in modules include:
 
-- [手撕纸拼贴定格](skills/agentic-video-foundry/references/styles/flat-paper-collage-stop-motion.md)：暖米纸底、扁平纸片、统一撕边与右下投影、离散定格运动、中文优先；默认参数见 [`flat-paper-collage-stop-motion.json`](skills/agentic-video-foundry/assets/style-presets/flat-paper-collage-stop-motion.json)。
-- [波普漫画印刷动效](skills/agentic-video-foundry/references/styles/comic-pop-art-motion.md)：四色印刷、粗黑轮廓、局部网点、分格叙事、锐利 snap 节奏与强 CTA；默认参数见 [`comic-pop-art-motion.json`](skills/agentic-video-foundry/assets/style-presets/comic-pop-art-motion.json)。
+- [Flat paper collage stop motion](skills/agentic-video-foundry/references/styles/flat-paper-collage-stop-motion.md): warm paper, rigid cutouts, consistent torn edges and down-right shadows, stepped cadence, and explicit no-morph rules.
+- [Comic pop-art motion](skills/agentic-video-foundry/references/styles/comic-pop-art-motion.md): four-color print language, bold outlines, selective halftone, panel storytelling, sharp snap timing, and high-contrast calls to action.
 
-两个模块都要求真实产品 Demo 保持像素可读，风格只作用于外围框架、注释、节奏和强调，不用虚构插画替代证据。
+Both modules keep real product demos pixel-readable. Style belongs around the evidence; it does not replace evidence with fictional illustration.
 
-## 声音不是附属品
+## Audio is not an afterthought
 
-Agentic Video Foundry 支持 ElevenLabs 与火山豆包语音/OpenSpeech。两者都先生成同稿候选试听，再按语义段落生成带时间戳旁白；音乐提示词包含 BPM、乐器、情绪曲线和明确结尾；音效只强化关键落点。供应商通过无密钥计划切换，密钥只从 Keychain 或环境变量读取，永不进入源码、日志或 manifest。火山能力可按 `cost`、`balanced`、`quality` 三档路由，避免“开通了就全用”。详细能力边界和命令见 [音频供应商路由](skills/agentic-video-foundry/references/audio-provider-routing.md)与[火山模型路由](skills/agentic-video-foundry/references/volcengine-model-routing.md)。
+Agentic Video Foundry supports ElevenLabs and Volcengine/OpenSpeech. Both routes audition candidates from the same script before final generation. Music prompts specify BPM, instrumentation, emotional arc, and an explicit ending; sound effects reinforce only meaningful beats. The provider plan contains no credentials: secrets are read from Keychain or environment variables and never enter source, logs, or manifests.
 
-对话里粘贴过的密钥应先轮换，再交互式写入 Keychain：
+Volcengine capabilities can be routed as `cost`, `balanced`, or `quality` rather than enabling every purchased model by default. See [audio provider routing](skills/agentic-video-foundry/references/audio-provider-routing.md) and [Volcengine model routing](skills/agentic-video-foundry/references/volcengine-model-routing.md).
+
+Store credentials interactively after rotating any key that has appeared in a chat:
 
 ```bash
 ~/.agents/skills/agentic-video-foundry/scripts/store-audio-credential.sh volcengine
 ~/.agents/skills/agentic-video-foundry/scripts/store-audio-credential.sh elevenlabs
 ```
 
-任何声线、BGM、SFX、时间或增益变化，都会使旧的母带测量失效。最终成片必须重新测完整响度和真峰值，并用手机外放实际听一遍。
+Any change to voice, BGM, SFX, timing, or gain invalidates previous master measurements. Re-render, re-measure, and listen again on phone speakers.
 
-## 安装
+## Install
 
-上传到 GitHub 后，全局安装：
+Install globally from the ZetaZeroHub repository:
 
 ```bash
-npx skills add kinglegendzzh/agentic-video-foundry@agentic-video-foundry -g -y
+npx skills add ZetaZeroHub/agentic-video-foundry@agentic-video-foundry -g -y
 ```
 
-本仓库开发态安装：
+For development from a local clone:
 
 ```bash
 ln -s "$PWD/skills/agentic-video-foundry" \
   "$HOME/.agents/skills/agentic-video-foundry"
 ```
 
-兼容只扫描私有目录的工具时，可再链接到 `~/.codex/skills/`、`~/.claude/skills/`、`~/.gemini/skills/` 或 `~/.trae/skills/`。
+If a tool scans only a private skill directory, also link the Skill into `~/.codex/skills/`, `~/.claude/skills/`, `~/.gemini/skills/`, or `~/.trae/skills/` as needed.
 
-重新启动 coding agent 后，直接说：
+Restart the coding agent, then ask:
 
 ```text
-使用 $agentic-video-foundry，把这份文案做成一条 45 秒的小红书/抖音竖屏短视频。
-风格要锐利、灵动，旁白像懂技术的年轻朋友，BGM 要听得见但不能抢词。
+Use $agentic-video-foundry to turn this brief into a 45-second vertical launch video.
+Keep the pacing energetic, make real product evidence the visual hero, and keep the music audible without masking the narration.
 ```
 
-## 可选能力安装
+## Optional capabilities
 
-Agentic Video Foundry 不复制第三方技能。本机可按固定版本安装并由路由器调用：
+Agentic Video Foundry does not copy third-party skills into this repository:
 
-- [Text-to-Lottie](https://github.com/diffusionstudio/lottie) — MIT；矢量动效资产生成与 Skottie 预览。
-- [HyperFrames](https://github.com/heygen-com/hyperframes) — Apache-2.0；HTML/GSAP/Lottie 确定性视频后端。
-- [Remotion Scenes](https://github.com/lifeprompt-team/remotion-scenes) — MIT；按项目选取的 Remotion 场景源码库，不是 Agent Skill。
+- [Text-to-Lottie](https://github.com/diffusionstudio/lottie) — MIT; vector motion assets and Skottie preview.
+- [HyperFrames](https://github.com/heygen-com/hyperframes) — Apache-2.0; deterministic HTML/GSAP/Lottie video backend.
+- [Remotion Scenes](https://github.com/lifeprompt-team/remotion-scenes) — MIT; a source library vendored per project, not an Agent Skill.
 
-第三方版本与本项目已审查基线见 [THIRD_PARTY.md](THIRD_PARTY.md)。
+Reviewed baselines and integration boundaries are recorded in [THIRD_PARTY.md](THIRD_PARTY.md).
 
-## 自动审计
+## Audit a video project
 
 ```bash
 node "$HOME/.agents/skills/agentic-video-foundry/scripts/audit-video-project.mjs" \
@@ -129,19 +133,21 @@ node "$HOME/.agents/skills/agentic-video-foundry/scripts/audit-video-project.mjs
   --strict
 ```
 
-审计器会检查常见密钥泄漏、非确定性动画、音频 manifest 哈希和最终视频流信息。`--strict` 会把缺少标准工程结构、音频 manifest 或哈希资产视为失败；刻意无声或非标准工程可以省略，但必须记录例外。它是交付闸门，但不能替代完整观看和收听。
+The auditor checks common secret leaks, nondeterministic animation, audio manifest hashes, and final media streams. Strict mode treats a missing standard structure, audio manifest, or hashed asset as a failure. It is a delivery gate, not a replacement for watching and listening to the entire master.
 
-## 内部验证基线
+## Internal validation baseline
 
-Agentic Video Foundry 的第一条内部参考成片来自一套 9 场景 Remotion + ElevenLabs 管线：1080×1920、30fps、约 48.55 秒、H.264 + 48kHz AAC；声线、BGM、SFX、字符级字幕、代表帧和母带均经过真实生成与检查。付费素材与源项目不在本仓库再分发；可审计的参数、验证范围和输出哈希见 [case study](skills/agentic-video-foundry/references/case-study.md)。这个案例提供方法证据，但不替代新项目自己的验收。
+The first internal reference film used a nine-scene Remotion and ElevenLabs pipeline at 1080×1920, 30 fps, H.264, and 48 kHz AAC. Voice, BGM, SFX, character-level captions, representative frames, and the final master were generated and checked. Paid assets and the source project are not redistributed; the verification scope and hashes are documented in the [case study](skills/agentic-video-foundry/references/case-study.md).
 
-## 仓库结构
+## Repository layout
 
 ```text
 agentic-video-foundry/
 ├── README.md
+├── README.zh-CN.md
 ├── AGENTS.md
 ├── THIRD_PARTY.md
+├── website/
 └── skills/
     └── agentic-video-foundry/
         ├── SKILL.md
@@ -152,4 +158,4 @@ agentic-video-foundry/
 
 ## License
 
-Agentic Video Foundry 自有内容采用 [MIT License](LICENSE)。第三方框架、Skill、场景组件与生成素材遵循各自许可证；本仓库只记录集成边界，不重授权第三方内容。
+Original Agentic Video Foundry content is released under the [MIT License](LICENSE). Third-party frameworks, skills, scene components, and generated media retain their own licenses; this repository documents integration boundaries and does not relicense third-party work.

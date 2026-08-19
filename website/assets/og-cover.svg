@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Agentic Video Foundry social sharing cover">
+  <rect width="1200" height="630" fill="#ffd400" />
+  <pattern id="dots" width="28" height="28" patternUnits="userSpaceOnUse"><circle cx="5" cy="5" r="3" fill="#101010" opacity=".12" /></pattern>
+  <rect width="1200" height="630" fill="url(#dots)" />
+  <path d="M810 0h390v630H690z" fill="#00b7d9" stroke="#101010" stroke-width="8" />
+  <rect x="64" y="62" width="104" height="104" rx="20" fill="#fff7e8" stroke="#101010" stroke-width="8" />
+  <rect x="75" y="75" width="104" height="104" rx="20" fill="#f2385a" stroke="#101010" stroke-width="8" />
+  <text x="127" y="143" text-anchor="middle" font-family="Arial Black,Arial,sans-serif" font-size="45" font-weight="900" fill="#101010">AV</text>
+  <text x="64" y="270" font-family="Arial Black,Arial,sans-serif" font-size="76" font-weight="900" fill="#101010">AGENTIC VIDEO</text>
+  <text x="64" y="356" font-family="Arial Black,Arial,sans-serif" font-size="76" font-weight="900" fill="#101010">FOUNDRY</text>
+  <rect x="64" y="407" width="675" height="74" fill="#fff7e8" stroke="#101010" stroke-width="7" />
+  <text x="94" y="458" font-family="Arial,Helvetica,sans-serif" font-size="32" font-weight="800" fill="#101010">ONE BRIEF → A VERIFIED VIDEO</text>
+  <rect x="725" y="128" width="382" height="382" rx="38" fill="#181818" stroke="#101010" stroke-width="10" transform="rotate(4 916 319)" />
+  <path d="M847 230v178l145-89z" fill="#ffd400" stroke="#fff7e8" stroke-width="10" stroke-linejoin="round" />
+  <rect x="836" y="475" width="194" height="56" rx="28" fill="#f2385a" stroke="#101010" stroke-width="6" />
+  <text x="933" y="513" text-anchor="middle" font-family="Arial Black,Arial,sans-serif" font-size="24" font-weight="900" fill="#fff">OPEN SOURCE</text>
+</svg>
