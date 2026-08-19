@@ -1,0 +1,46 @@
+website/zh/index.html
+  s_7ef79ab138b411::t_7c0fa4177afbb2 67
+  s_7ef79ab138b411::t_8b40e7aab2127d 73
+  s_7ef79ab138b411::t_bd3548300b1a32 92-195
+  s_7ef79ab138b411::t_ca5a8ea1d7e117 34
+website/index.html
+  s_7ef79ab138b411::t_b6dfc67d73a3ad 102
+  s_7ef79ab138b411::t_06f415c1eec611 138-241
+  s_7ef79ab138b411::t_15173eb8e7640e 79-94
+  s_7ef79ab138b411::t_f308d106519f7a 34
+  s_7ef79ab138b411::t_abc51c6d4959c9 95
+website/styles.css
+  s_7ef79ab138b411::t_50232d458ab6a2 954-1455
+  s_7ef79ab138b411::t_b36645d6a3e31d 921,923,926
+website/site.js
+  s_7ef79ab138b411::t_3d1e8fd2e21b0a 148-212
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.2",
+  "base_commit_sha": "0328c8bdedbd8fb5cc69798dfcfd97b4aa7deadf",
+  "prompts": {},
+  "sessions": {
+    "s_7ef79ab138b411": {
+      "agent_id": {
+        "tool": "trae",
+        "id": "6a8563ff5589541b75479268",
+        "model": "kimi-k3"
+      },
+      "human_author": "kinglegendzzh <kinglegendzzh@163.com>",
+      "custom_attributes": {
+        "runtime_client": "trae-tob-git-ai",
+        "external_session_id": "6a8563ff5589541b75479268",
+        "source_scene": "agent",
+        "tool_id": "icube:applyChatSnapshotPatch",
+        "tool_type": "builtin",
+        "tool_use_id": "6a858a359011b106674af4dd",
+        "dedupe_key": "6a8563ff5589541b75479268:6a858a359011b106674af4dd:afterEdit:285f7498",
+        "session_id": "6a8563ff5589541b75479268",
+        "operation_id": "6a858a359011b106674af4dd",
+        "client_type": "ide",
+        "edit_kind": "file_edit"
+      }
+    }
+  }
+}
