@@ -22,3 +22,5 @@ Agentic Video Foundry is an open-source Agent Skill for producing verified short
 - API keys remain in the OS keychain or environment variables.
 - Paid and private media is not distributed through Git history.
 - Completion requires a full visual and audio review plus technical checks.
+- Audio generation can route ElevenLabs or Volcengine for narration, voice auditions, music, and sound effects; captions are aligned to generated audio timestamps.
+- Target agent environments include Codex, Claude Code, Trae, Gemini CLI, Kimi Code, MiniMax, and other tools that can load Agent Skills or repository instructions.

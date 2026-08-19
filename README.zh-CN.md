@@ -19,6 +19,21 @@
 
 公开部署目标为 [video.zzh.app](https://video.zzh.app/)。批准公开的展示视频单独进入部署包，不进入 Git 历史。
 
+## 在常用 coding agent 中直接调用
+
+<table>
+  <tr>
+    <td align="center"><img src="website/assets/brands/codex-color.svg" width="34" alt="Codex logo"><br><strong>Codex</strong></td>
+    <td align="center"><img src="website/assets/brands/claudecode-color.svg" width="34" alt="Claude Code logo"><br><strong>Claude Code</strong></td>
+    <td align="center"><img src="website/assets/brands/trae-color.svg" width="34" alt="Trae logo"><br><strong>Trae</strong></td>
+    <td align="center"><img src="website/assets/brands/gemini-color.svg" width="34" alt="Gemini logo"><br><strong>Gemini CLI</strong></td>
+    <td align="center"><img src="website/assets/brands/kimi-color.svg" width="34" alt="Kimi logo"><br><strong>Kimi Code</strong></td>
+    <td align="center"><img src="website/assets/brands/minimax-color.svg" width="34" alt="MiniMax logo"><br><strong>MiniMax</strong></td>
+  </tr>
+</table>
+
+以上是当前目标运行环境，不代表平台合作或背书。支持标准安装的工具可直接全局安装；其他工具可把 Skill 链接到私有技能目录，或通过仓库指令加载。
+
 ## 为什么是 Agentic Video Foundry
 
 - **成片负责制**：终点是看过、听过、测过的发布文件，不是中间产物。
@@ -75,7 +90,13 @@ Foundry 不鼓励为了“技术栈全家桶”而混用。每个镜头先按实
 
 ## 声音不是附属品
 
-Agentic Video Foundry 支持 ElevenLabs 与火山豆包语音/OpenSpeech。两条路线都先生成同稿候选试听，再按语义段落生成带时间戳旁白；音乐提示词包含 BPM、乐器、情绪曲线和明确结尾；音效只强化关键落点。密钥只从 Keychain 或环境变量读取，永不进入源码、日志或 manifest。
+<p>
+  <img src="website/assets/brands/elevenlabs.svg" width="30" alt="ElevenLabs logo"> <strong>ElevenLabs</strong>
+  &nbsp;&nbsp;或&nbsp;&nbsp;
+  <img src="website/assets/brands/volcengine-color.svg" width="30" alt="火山引擎 logo"> <strong>火山引擎 / OpenSpeech</strong>
+</p>
+
+Agentic Video Foundry 可在 ElevenLabs 与火山引擎/OpenSpeech 之间路由 AI 口播、多样音色试听、背景音乐和互动音效。两条路线都先生成同稿候选试听，再按语义段落生成带时间戳旁白；真实生成的音频时间戳直接驱动场景长度和字幕，而不是估算阅读速度。音乐提示词包含 BPM、乐器、情绪曲线和明确结尾；音效只强化关键落点。密钥只从 Keychain 或环境变量读取，永不进入源码、日志或 manifest。
 
 火山能力可按 `cost`、`balanced`、`quality` 三档路由。详细边界见[音频供应商路由](skills/agentic-video-foundry/references/audio-provider-routing.md)与[火山模型路由](skills/agentic-video-foundry/references/volcengine-model-routing.md)。
 

@@ -31,6 +31,7 @@ Serve the directory root as `https://video.zzh.app/`; do not serve `website/` as
 - `llms.txt` summarizes the project and canonical resources for AI agents.
 - Each page includes Open Graph, Twitter Card, and JSON-LD metadata.
 - `favicon.svg`, `assets/apple-touch-icon.png`, and `assets/og-cover.png` share the AV identity.
+- `assets/brands/` contains the pinned logo assets used for audio-provider and coding-agent compatibility labels; provenance and the non-endorsement boundary are documented alongside the files.
 
 ## Safety boundary
 

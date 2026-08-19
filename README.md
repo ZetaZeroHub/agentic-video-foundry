@@ -19,6 +19,21 @@ The bilingual pop-art website lives in [`website/`](website/): English is the de
 
 The public deployment is designed for [video.zzh.app](https://video.zzh.app/). Approved showcase media is packaged separately and intentionally remains outside Git history.
 
+## Run it from your coding agent
+
+<table>
+  <tr>
+    <td align="center"><img src="website/assets/brands/codex-color.svg" width="34" alt="Codex logo"><br><strong>Codex</strong></td>
+    <td align="center"><img src="website/assets/brands/claudecode-color.svg" width="34" alt="Claude Code logo"><br><strong>Claude Code</strong></td>
+    <td align="center"><img src="website/assets/brands/trae-color.svg" width="34" alt="Trae logo"><br><strong>Trae</strong></td>
+    <td align="center"><img src="website/assets/brands/gemini-color.svg" width="34" alt="Gemini logo"><br><strong>Gemini CLI</strong></td>
+    <td align="center"><img src="website/assets/brands/kimi-color.svg" width="34" alt="Kimi logo"><br><strong>Kimi Code</strong></td>
+    <td align="center"><img src="website/assets/brands/minimax-color.svg" width="34" alt="MiniMax logo"><br><strong>MiniMax</strong></td>
+  </tr>
+</table>
+
+These are target agent environments, not partner endorsements. Use the standard global install where supported; otherwise link the Skill into the tool's Skill directory or load it through repository instructions.
+
 ## Why Agentic Video Foundry
 
 - **Finished-video ownership**: the endpoint is a watched, heard, and measured publishing file—not an intermediate artifact.
@@ -77,7 +92,13 @@ Both modules keep real product demos pixel-readable. Style belongs around the ev
 
 ## Audio is not an afterthought
 
-Agentic Video Foundry supports ElevenLabs and Volcengine/OpenSpeech. Both routes audition candidates from the same script before final generation. Music prompts specify BPM, instrumentation, emotional arc, and an explicit ending; sound effects reinforce only meaningful beats. The provider plan contains no credentials: secrets are read from Keychain or environment variables and never enter source, logs, or manifests.
+<p>
+  <img src="website/assets/brands/elevenlabs.svg" width="30" alt="ElevenLabs logo"> <strong>ElevenLabs</strong>
+  &nbsp;&nbsp;or&nbsp;&nbsp;
+  <img src="website/assets/brands/volcengine-color.svg" width="30" alt="Volcengine logo"> <strong>Volcengine / OpenSpeech</strong>
+</p>
+
+Agentic Video Foundry routes ElevenLabs or Volcengine/OpenSpeech across AI narration, multi-voice audition, background music, and interaction sound effects. Both routes audition candidates from the same script before final generation. Real generated timestamps drive scene duration and captions instead of estimated reading speed. Music prompts specify BPM, instrumentation, emotional arc, and an explicit ending; sound effects reinforce only meaningful beats. The provider plan contains no credentials: secrets are read from Keychain or environment variables and never enter source, logs, or manifests.
 
 Volcengine capabilities can be routed as `cost`, `balanced`, or `quality` rather than enabling every purchased model by default. See [audio provider routing](skills/agentic-video-foundry/references/audio-provider-routing.md) and [Volcengine model routing](skills/agentic-video-foundry/references/volcengine-model-routing.md).
 
