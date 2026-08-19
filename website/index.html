@@ -31,7 +31,7 @@
     <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
     <link rel="apple-touch-icon" href="./assets/apple-touch-icon.png" />
     <link rel="manifest" href="./site.webmanifest" />
-    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./styles.css?v=20250819" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -76,14 +76,30 @@
         ]
       }
     </script>
-    <script src="./site.js" defer></script>
+    <script>
+      (function () {
+        try {
+          var preferred = window.localStorage.getItem('preferred-language');
+          if (preferred === 'en') {
+            return;
+          }
+          var language = (preferred || window.navigator.language || '').toLowerCase();
+          if (language.indexOf('zh') === 0) {
+            window.location.replace('./zh/');
+          }
+        } catch (error) {
+          /* Language detection unavailable; keep the current page. */
+        }
+      })();
+    </script>
+    <script src="./site.js?v=20250819" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
     <header class="site-header" data-header>
       <a class="brand" href="#top" aria-label="Agentic Video Foundry home"><span class="brand-mark" aria-hidden="true">AV</span><span>AGENTIC VIDEO FOUNDRY</span></a>
       <nav class="site-nav" aria-label="Primary navigation">
-        <a href="#workflow">Workflow</a><a href="#evidence">Watch</a><a href="#case-study">Case study</a><a href="https://github.com/ZetaZeroHub/agentic-video-foundry">GitHub</a><a class="language-link" href="./zh/" lang="zh-Hans" hreflang="zh-Hans">中文</a><a class="nav-cta" href="#install">Install Skill</a>
+        <a href="#workflow">Workflow</a><a href="#audio-providers">Audio</a><a href="#style-presets">Styles</a><a href="#evidence">Watch</a><a href="#case-study">Case study</a><a href="https://github.com/ZetaZeroHub/agentic-video-foundry">GitHub</a><a class="language-link" href="./zh/" lang="zh-Hans" hreflang="zh-Hans">中文</a><a class="nav-cta" href="#install">Install Skill</a>
       </nav>
     </header>
     <main id="main">
@@ -117,6 +133,110 @@
           <article class="workflow-card card-red"><span class="card-number">04</span><p class="card-label">ROUTING</p><h3>Use each tool for its strength</h3><p>Remotion owns the master timeline. Lottie and HyperFrames serve only the scenes they fit.</p><ul><li>One master chain</li><li>Frozen exchange assets</li><li>Final revalidation</li></ul></article>
           <article class="workflow-card card-blue"><span class="card-number">05</span><p class="card-label">RENDER</p><h3>Deterministic composition</h3><p>Frame-driven motion keeps captions, sound cues, and batch variants reproducible.</p><ul><li>Data timeline</li><li>No random drift</li><li>Still-frame preflight</li></ul></article>
           <article class="workflow-card card-white"><span class="card-number">06</span><p class="card-label">DELIVERY</p><h3>Verify before shipping</h3><p>Full watch-through, phone-speaker review, encoding, loudness, true peak, and manifests are hard gates.</p><ul><li>Visual QA</li><li>Audio QA</li><li>Editable assets</li></ul></article>
+        </div>
+      </section>
+      <section class="section audio-providers-section" id="audio-providers" aria-labelledby="audio-providers-title">
+        <div class="section-heading"><div><p class="section-kicker">AUDIO BACKENDS</p><h2 id="audio-providers-title">Two providers.<br />Not one URL.</h2></div><p>ElevenLabs and Volcengine are swappable audio backends, not interchangeable URLs. Each maps real capabilities to real roles in the pipeline.</p></div>
+        <div class="providers-grid">
+          <article class="provider-card provider-elevenlabs">
+            <div class="provider-header"><span class="provider-badge">PROVIDER A</span><h3>ElevenLabs</h3></div>
+            <ul class="provider-capabilities">
+              <li><span class="cap-role">TTS</span> Timestamped narration with character or word-level alignment</li>
+              <li><span class="cap-role">MUSIC</span> Music API with structure and duration prompts</li>
+              <li><span class="cap-role">SFX</span> Sound Effects API for precise cue points</li>
+              <li><span class="cap-role">VOICE</span> Voice Design and Library for custom timbres</li>
+            </ul>
+          </article>
+          <article class="provider-card provider-volcengine">
+            <div class="provider-header"><span class="provider-badge">PROVIDER B</span><h3>Volcengine Doubao</h3></div>
+            <ul class="provider-capabilities">
+              <li><span class="cap-role">TTS</span> Seed Audio TTS with sentence or word timestamps</li>
+              <li><span class="cap-role">MUSIC</span> Pure prompt-driven music generation</li>
+              <li><span class="cap-role">SFX</span> Pure prompt-driven sound effects</li>
+              <li><span class="cap-role">VOICE</span> Voice design and voice clone with authorized samples</li>
+            </ul>
+          </article>
+        </div>
+        <div class="capability-matrix" role="table" aria-label="Audio provider capability matrix">
+          <div class="matrix-row matrix-header" role="row">
+            <div class="matrix-cell matrix-task" role="columnheader">Task</div>
+            <div class="matrix-cell matrix-provider" role="columnheader">ElevenLabs</div>
+            <div class="matrix-cell matrix-provider" role="columnheader">Volcengine</div>
+          </div>
+          <div class="matrix-row" role="row">
+            <div class="matrix-cell matrix-task" role="cell">Narration 30-90s</div>
+            <div class="matrix-cell" role="cell">Timestamped TTS</div>
+            <div class="matrix-cell" role="cell">Seed Audio TTS</div>
+          </div>
+          <div class="matrix-row" role="row">
+            <div class="matrix-cell matrix-task" role="cell">Caption timing</div>
+            <div class="matrix-cell" role="cell">Character alignment</div>
+            <div class="matrix-cell" role="cell">enable_subtitle=true</div>
+          </div>
+          <div class="matrix-row" role="row">
+            <div class="matrix-cell matrix-task" role="cell">Background music</div>
+            <div class="matrix-cell" role="cell">Music API</div>
+            <div class="matrix-cell" role="cell">Pure prompt generation</div>
+          </div>
+          <div class="matrix-row" role="row">
+            <div class="matrix-cell matrix-task" role="cell">Sound effects</div>
+            <div class="matrix-cell" role="cell">Sound Effects API</div>
+            <div class="matrix-cell" role="cell">Pure prompt generation</div>
+          </div>
+          <div class="matrix-row" role="row">
+            <div class="matrix-cell matrix-task" role="cell">Voice design</div>
+            <div class="matrix-cell" role="cell">Voice Design/Library</div>
+            <div class="matrix-cell" role="cell">voice_design endpoint</div>
+          </div>
+          <div class="matrix-row" role="row">
+            <div class="matrix-cell matrix-task" role="cell">Voice clone</div>
+            <div class="matrix-cell" role="cell">Plan + authorization</div>
+            <div class="matrix-cell" role="cell">voice_clone endpoint</div>
+          </div>
+        </div>
+        <div class="provider-warning"><span class="warning-icon" aria-hidden="true">!</span><p>Switching providers means rebuilding the audio system: new durations, new caption timing, new gain calibration, fresh LUFS and dBTP measurements. Old timeline values are void.</p></div>
+      </section>
+      <section class="section style-presets-section" id="style-presets" aria-labelledby="style-presets-title" data-preset-active="comic-pop-art-motion">
+        <div class="section-heading"><div><p class="section-kicker">STYLE PRESETS</p><h2 id="style-presets-title">Two presets.<br />Not one palette.</h2></div><p>Each style preset controls material, palette, typography, motion grammar, density limits, and hard failures. Switch below to see the preset take over this section.</p></div>
+        <div class="preset-tabs" role="tablist" aria-label="Style preset selector">
+          <button class="preset-tab is-active" type="button" role="tab" aria-selected="true" aria-controls="preset-panel-pop" id="preset-tab-pop" data-preset="comic-pop-art-motion">Comic Pop-Art</button>
+          <button class="preset-tab" type="button" role="tab" aria-selected="false" aria-controls="preset-panel-paper" id="preset-tab-paper" data-preset="flat-paper-collage-stop-motion">Paper Collage</button>
+        </div>
+        <div class="preset-panels">
+          <div class="preset-panel is-active" id="preset-panel-pop" role="tabpanel" aria-labelledby="preset-tab-pop" data-preset-panel="comic-pop-art-motion">
+            <div class="preset-visual preset-visual-pop" aria-hidden="true">
+              <div class="preset-demo-panel">
+                <div class="demo-headline">BOLD</div>
+                <div class="demo-subline">Four-color print</div>
+                <div class="demo-halftone"></div>
+                <div class="demo-burst">SNAP!</div>
+              </div>
+            </div>
+            <div class="preset-rules">
+              <article class="rule-card rule-palette"><h4>Palette</h4><div class="swatch-grid"><span class="swatch" style="background:#101010" title="Ink"></span><span class="swatch" style="background:#FFF7E8" title="Paper"></span><span class="swatch" style="background:#FFD400" title="Yellow"></span><span class="swatch" style="background:#00B7D9" title="Cyan"></span><span class="swatch" style="background:#F2385A" title="Red"></span><span class="swatch" style="background:#2457D6" title="Blue"></span></div><p>Ink black, warm paper, electric yellow, bright cyan, hot red, cobalt blue. Max 3 high-saturation colors per frame.</p></article>
+              <article class="rule-card rule-motion"><h4>Motion</h4><p>Energetic snap. 6-frame base unit, 12% hero overshoot, 18-frame result holds. Panel slam, ink wipe, match cut transitions only.</p></article>
+              <article class="rule-card rule-density"><h4>Density</h4><p>1 hero per frame, max 2 supporters, max 3 panels at peak. Hero occupies 40-68% of canvas.</p></article>
+              <article class="rule-card rule-forbidden"><h4>Forbidden</h4><p>No 3D flip, no liquid morph, no strobing, no continuous camera breathing, no unseeded jitter.</p></article>
+              <article class="rule-card rule-usage"><h4>Usage</h4><p><code>assets/style-presets/comic-pop-art-motion.json</code></p><p>Copy into project before implementation. Override palette and motion tokens only. Never override single hero, 3-color limit, evidence readability, or deterministic frame drive.</p></article>
+            </div>
+          </div>
+          <div class="preset-panel" id="preset-panel-paper" role="tabpanel" aria-labelledby="preset-tab-paper" data-preset-panel="flat-paper-collage-stop-motion" hidden>
+            <div class="preset-visual preset-visual-paper" aria-hidden="true">
+              <div class="preset-demo-panel">
+                <div class="demo-headline-paper">Torn</div>
+                <div class="demo-subline-paper">Stop-motion collage</div>
+                <div class="demo-torn-edge"></div>
+                <div class="demo-tape"></div>
+              </div>
+            </div>
+            <div class="preset-rules">
+              <article class="rule-card rule-palette"><h4>Palette</h4><div class="swatch-grid"><span class="swatch" style="background:#25221F" title="Ink"></span><span class="swatch" style="background:#F5EDD8" title="Paper"></span><span class="swatch" style="background:#8B6340" title="Clay"></span><span class="swatch" style="background:#5C8A3A" title="Grass"></span><span class="swatch" style="background:#7EC8E3" title="Sky"></span><span class="swatch" style="background:#F0C75E" title="Warm Yellow"></span></div><p>Warm fiber paper, clay brown, grass green, sky blue, warm yellow. Low-saturation offset print feel.</p></article>
+              <article class="rule-card rule-motion"><h4>Motion</h4><p>Stop-motion holds. 2-6 frame irregular holds, 6px micro-sway, max 3° rotation, single settle overshoot. Paper wipe, hand-set slide, page push transitions.</p></article>
+              <article class="rule-card rule-density"><h4>Density</h4><p>1 hero per frame, max 2 supporters, max 6 paper groups. Subject occupies 35-60% of canvas.</p></article>
+              <article class="rule-card rule-forbidden"><h4>Forbidden</h4><p>No continuous floating, no shape morphing, no unseeded random jitter, no simultaneous everything.</p></article>
+              <article class="rule-card rule-usage"><h4>Usage</h4><p><code>assets/style-presets/flat-paper-collage-stop-motion.json</code></p><p>Copy into project before implementation. Override palette, texture opacity, edge roughness, hold patterns only. Never override single hero, Chinese priority, rigid paper, deterministic motion, or evidence preservation.</p></article>
+            </div>
+          </div>
         </div>
       </section>
       <section class="section evidence-section" id="evidence" aria-labelledby="evidence-title">

@@ -145,3 +145,68 @@ if (evidenceVideo) {
     if (document.hidden) evidenceVideo.pause();
   });
 }
+
+/* ── Style preset tab switching ─────────────────────── */
+
+const presetSection = document.querySelector("[data-preset-active]");
+const presetTabs = document.querySelectorAll(".preset-tab");
+const presetPanels = document.querySelectorAll("[data-preset-panel]");
+
+const activatePreset = (presetId) => {
+  if (!presetSection) return;
+  presetSection.setAttribute("data-preset-active", presetId);
+
+  presetTabs.forEach((tab) => {
+    const isActive = tab.getAttribute("data-preset") === presetId;
+    tab.classList.toggle("is-active", isActive);
+    tab.setAttribute("aria-selected", String(isActive));
+  });
+
+  presetPanels.forEach((panel) => {
+    const isActive = panel.getAttribute("data-preset-panel") === presetId;
+    panel.classList.toggle("is-active", isActive);
+    if (isActive) {
+      panel.removeAttribute("hidden");
+    } else {
+      panel.setAttribute("hidden", "");
+    }
+  });
+};
+
+presetTabs.forEach((tab) => {
+  tab.addEventListener("click", () => {
+    const presetId = tab.getAttribute("data-preset");
+    if (presetId) activatePreset(presetId);
+  });
+
+  tab.addEventListener("keydown", (event) => {
+    if (event.key !== "ArrowLeft" && event.key !== "ArrowRight") return;
+    event.preventDefault();
+    const tabs = Array.from(presetTabs);
+    const currentIndex = tabs.indexOf(tab);
+    const nextIndex =
+      event.key === "ArrowRight"
+        ? (currentIndex + 1) % tabs.length
+        : (currentIndex - 1 + tabs.length) % tabs.length;
+    tabs[nextIndex].focus();
+    const nextPreset = tabs[nextIndex].getAttribute("data-preset");
+    if (nextPreset) activatePreset(nextPreset);
+  });
+});
+
+/* ── Language preference persistence ────────────────── */
+
+document.querySelectorAll(".language-link").forEach((link) => {
+  link.addEventListener("click", () => {
+    const targetLang = link.getAttribute("hreflang") || "";
+    try {
+      if (targetLang.indexOf("zh") === 0) {
+        window.localStorage.setItem("preferred-language", "zh");
+      } else {
+        window.localStorage.setItem("preferred-language", "en");
+      }
+    } catch (error) {
+      /* localStorage unavailable; continue without persistence. */
+    }
+  });
+});

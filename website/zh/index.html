@@ -31,7 +31,7 @@
     <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
     <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png" />
     <link rel="manifest" href="../site.webmanifest" />
-    <link rel="stylesheet" href="../styles.css" />
+    <link rel="stylesheet" href="../styles.css?v=20250819" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -64,13 +64,13 @@
         ]
       }
     </script>
-    <script src="../site.js" defer></script>
+    <script src="../site.js?v=20250819" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#main">跳到主要内容</a>
     <header class="site-header" data-header>
       <a class="brand" href="#top" aria-label="Agentic Video Foundry 首页"><span class="brand-mark" aria-hidden="true">AV</span><span>AGENTIC VIDEO FOUNDRY</span></a>
-      <nav class="site-nav" aria-label="主要导航"><a href="#workflow">工作流</a><a href="#evidence">看成片</a><a href="#case-study">案例</a><a href="https://github.com/ZetaZeroHub/agentic-video-foundry">GitHub</a><a class="language-link" href="../" lang="en" hreflang="en">EN</a><a class="nav-cta" href="#install">安装 Skill</a></nav>
+      <nav class="site-nav" aria-label="主要导航"><a href="#workflow">工作流</a><a href="#audio-providers">音频</a><a href="#style-presets">风格</a><a href="#evidence">看成片</a><a href="#case-study">案例</a><a href="https://github.com/ZetaZeroHub/agentic-video-foundry">GitHub</a><a class="language-link" href="../" lang="en" hreflang="en">EN</a><a class="nav-cta" href="#install">安装 Skill</a></nav>
     </header>
     <main id="main">
       <section class="hero" id="top" aria-labelledby="hero-title">
@@ -87,6 +87,110 @@
           <article class="workflow-card card-red"><span class="card-number">04</span><p class="card-label">ROUTING</p><h3>场景各司其职</h3><p>Remotion 管主时间轴，Lottie 和 HyperFrames 只做合适的支线场景。</p><ul><li>单一主链</li><li>冻结交换资产</li><li>最终复验</li></ul></article>
           <article class="workflow-card card-blue"><span class="card-number">05</span><p class="card-label">RENDER</p><h3>确定性合成</h3><p>帧驱动动画、字幕、音效落点和批量变体都能稳定复现。</p><ul><li>时间轴数据化</li><li>无随机漂移</li><li>静帧预检</li></ul></article>
           <article class="workflow-card card-white"><span class="card-number">06</span><p class="card-label">DELIVERY</p><h3>验收再交付</h3><p>完整观看、手机外放、编码、响度、真峰值与 manifest 缺一不可。</p><ul><li>视觉 QA</li><li>声音 QA</li><li>可编辑资产</li></ul></article>
+        </div>
+      </section>
+      <section class="section audio-providers-section" id="audio-providers" aria-labelledby="audio-providers-title">
+        <div class="section-heading"><div><p class="section-kicker">AUDIO BACKENDS</p><h2 id="audio-providers-title">两套音频后端<br />不是换一个 URL</h2></div><p>ElevenLabs 与火山豆包语音是可替换的音频后端，不是可互换的 URL。每个供应商把真实能力映射到管线中的真实角色。</p></div>
+        <div class="providers-grid">
+          <article class="provider-card provider-elevenlabs">
+            <div class="provider-header"><span class="provider-badge">供应商 A</span><h3>ElevenLabs</h3></div>
+            <ul class="provider-capabilities">
+              <li><span class="cap-role">TTS</span> 带字符或词级对齐的时间戳旁白</li>
+              <li><span class="cap-role">MUSIC</span> 带结构与时长提示的 Music API</li>
+              <li><span class="cap-role">SFX</span> 精确落点的 Sound Effects API</li>
+              <li><span class="cap-role">VOICE</span> Voice Design 与 Library 自定义音色</li>
+            </ul>
+          </article>
+          <article class="provider-card provider-volcengine">
+            <div class="provider-header"><span class="provider-badge">供应商 B</span><h3>火山豆包语音</h3></div>
+            <ul class="provider-capabilities">
+              <li><span class="cap-role">TTS</span> Seed Audio TTS 带句/词时间戳</li>
+              <li><span class="cap-role">MUSIC</span> 纯提示词驱动的音乐生成</li>
+              <li><span class="cap-role">SFX</span> 纯提示词驱动的音效生成</li>
+              <li><span class="cap-role">VOICE</span> 音色设计与授权样本声音复刻</li>
+            </ul>
+          </article>
+        </div>
+        <div class="capability-matrix" role="table" aria-label="音频供应商能力矩阵">
+          <div class="matrix-row matrix-header" role="row">
+            <div class="matrix-cell matrix-task" role="columnheader">任务</div>
+            <div class="matrix-cell matrix-provider" role="columnheader">ElevenLabs</div>
+            <div class="matrix-cell matrix-provider" role="columnheader">火山豆包语音</div>
+          </div>
+          <div class="matrix-row" role="row">
+            <div class="matrix-cell matrix-task" role="cell">30-90 秒旁白</div>
+            <div class="matrix-cell" role="cell">Timestamped TTS</div>
+            <div class="matrix-cell" role="cell">Seed Audio TTS</div>
+          </div>
+          <div class="matrix-row" role="row">
+            <div class="matrix-cell matrix-task" role="cell">字幕时间</div>
+            <div class="matrix-cell" role="cell">字符级 alignment</div>
+            <div class="matrix-cell" role="cell">enable_subtitle=true</div>
+          </div>
+          <div class="matrix-row" role="row">
+            <div class="matrix-cell matrix-task" role="cell">背景音乐</div>
+            <div class="matrix-cell" role="cell">Music API</div>
+            <div class="matrix-cell" role="cell">纯提示词生成</div>
+          </div>
+          <div class="matrix-row" role="row">
+            <div class="matrix-cell matrix-task" role="cell">音效</div>
+            <div class="matrix-cell" role="cell">Sound Effects API</div>
+            <div class="matrix-cell" role="cell">纯提示词生成</div>
+          </div>
+          <div class="matrix-row" role="row">
+            <div class="matrix-cell matrix-task" role="cell">音色设计</div>
+            <div class="matrix-cell" role="cell">Voice Design/Library</div>
+            <div class="matrix-cell" role="cell">voice_design 接口</div>
+          </div>
+          <div class="matrix-row" role="row">
+            <div class="matrix-cell matrix-task" role="cell">声音复刻</div>
+            <div class="matrix-cell" role="cell">计划 + 授权</div>
+            <div class="matrix-cell" role="cell">voice_clone 接口</div>
+          </div>
+        </div>
+        <div class="provider-warning"><span class="warning-icon" aria-hidden="true">!</span><p>切换供应商意味着重建音频系统：新时长、新字幕时间、新增益校准、重新测量 LUFS 与 dBTP。旧时间轴数值一律作废。</p></div>
+      </section>
+      <section class="section style-presets-section" id="style-presets" aria-labelledby="style-presets-title" data-preset-active="comic-pop-art-motion">
+        <div class="section-heading"><div><p class="section-kicker">STYLE PRESETS</p><h2 id="style-presets-title">两套风格 preset<br />不是换一套配色</h2></div><p>每个风格 preset 控制材质、配色、排版、运动语法、密度限制与硬失败。点击下方切换，看 preset 接管本区视觉。</p></div>
+        <div class="preset-tabs" role="tablist" aria-label="风格 preset 选择器">
+          <button class="preset-tab is-active" type="button" role="tab" aria-selected="true" aria-controls="preset-panel-pop" id="preset-tab-pop" data-preset="comic-pop-art-motion">波普漫画</button>
+          <button class="preset-tab" type="button" role="tab" aria-selected="false" aria-controls="preset-panel-paper" id="preset-tab-paper" data-preset="flat-paper-collage-stop-motion">手撕纸拼贴</button>
+        </div>
+        <div class="preset-panels">
+          <div class="preset-panel is-active" id="preset-panel-pop" role="tabpanel" aria-labelledby="preset-tab-pop" data-preset-panel="comic-pop-art-motion">
+            <div class="preset-visual preset-visual-pop" aria-hidden="true">
+              <div class="preset-demo-panel">
+                <div class="demo-headline">BOLD</div>
+                <div class="demo-subline">四色印刷</div>
+                <div class="demo-halftone"></div>
+                <div class="demo-burst">SNAP!</div>
+              </div>
+            </div>
+            <div class="preset-rules">
+              <article class="rule-card rule-palette"><h4>配色</h4><div class="swatch-grid"><span class="swatch" style="background:#101010" title="墨黑"></span><span class="swatch" style="background:#FFF7E8" title="纸白"></span><span class="swatch" style="background:#FFD400" title="电光黄"></span><span class="swatch" style="background:#00B7D9" title="亮青"></span><span class="swatch" style="background:#F2385A" title="热红"></span><span class="swatch" style="background:#2457D6" title="钴蓝"></span></div><p>墨黑、暖纸白、电光黄、亮青、热红、钴蓝。同屏最多三种高饱和色。</p></article>
+              <article class="rule-card rule-motion"><h4>运动</h4><p>高能 snap。6 帧基础单位、12% Hero 过冲、18 帧结果停顿。仅 panel slam、ink wipe、match cut 转场。</p></article>
+              <article class="rule-card rule-density"><h4>密度</h4><p>每帧 1 个 Hero、最多 2 个支持物、高潮最多 3 格。Hero 占画面 40-68%。</p></article>
+              <article class="rule-card rule-forbidden"><h4>禁止项</h4><p>禁止 3D 翻转、液体变形、高频闪烁、持续镜头呼吸、无种子抖动。</p></article>
+              <article class="rule-card rule-usage"><h4>用法</h4><p><code>assets/style-presets/comic-pop-art-motion.json</code></p><p>实现前复制到项目。仅可覆盖配色与运动 token。不得覆盖单一 Hero、三色上限、证据可读性或确定性帧驱动。</p></article>
+            </div>
+          </div>
+          <div class="preset-panel" id="preset-panel-paper" role="tabpanel" aria-labelledby="preset-tab-paper" data-preset-panel="flat-paper-collage-stop-motion" hidden>
+            <div class="preset-visual preset-visual-paper" aria-hidden="true">
+              <div class="preset-demo-panel">
+                <div class="demo-headline-paper">Torn</div>
+                <div class="demo-subline-paper">定格拼贴</div>
+                <div class="demo-torn-edge"></div>
+                <div class="demo-tape"></div>
+              </div>
+            </div>
+            <div class="preset-rules">
+              <article class="rule-card rule-palette"><h4>配色</h4><div class="swatch-grid"><span class="swatch" style="background:#25221F" title="墨黑"></span><span class="swatch" style="background:#F5EDD8" title="纸色"></span><span class="swatch" style="background:#8B6340" title="泥土棕"></span><span class="swatch" style="background:#5C8A3A" title="草绿"></span><span class="swatch" style="background:#7EC8E3" title="天蓝"></span><span class="swatch" style="background:#F0C75E" title="暖黄"></span></div><p>暖纤维纸、泥土棕、草绿、天蓝、暖黄。低饱和复古胶印感。</p></article>
+              <article class="rule-card rule-motion"><h4>运动</h4><p>定格停顿。2-6 帧不规则停顿、6px 微摆、最大 3° 旋转、单次落位过冲。Paper wipe、hand-set slide、page push 转场。</p></article>
+              <article class="rule-card rule-density"><h4>密度</h4><p>每帧 1 个 Hero、最多 2 个支持物、最多 6 组纸片。主体占画面 35-60%。</p></article>
+              <article class="rule-card rule-forbidden"><h4>禁止项</h4><p>禁止连续漂浮、形状变形、无种子随机抖动、所有元素同时运动。</p></article>
+              <article class="rule-card rule-usage"><h4>用法</h4><p><code>assets/style-presets/flat-paper-collage-stop-motion.json</code></p><p>实现前复制到项目。仅可覆盖配色、纹理透明度、边缘粗糙度、停顿模式。不得覆盖单一 Hero、中文优先、刚性纸片、确定性运动或证据保留。</p></article>
+            </div>
+          </div>
         </div>
       </section>
       <section class="section evidence-section" id="evidence" aria-labelledby="evidence-title">
