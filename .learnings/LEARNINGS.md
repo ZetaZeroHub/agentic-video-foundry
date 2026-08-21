@@ -186,3 +186,40 @@ Node/Remotion 进程的 PATH 可能看不到宿主终端中的 ffmpeg；Apple Si
 ### 提升条件
 
 所有扁平剪纸、拼贴和定格风格默认禁用 CSS 3D 翻面；确需三维时必须单独建立透视、背面与跨帧回归测试。
+
+## [LRN-20260821-001] best_practice
+
+**Logged**: 2026-08-21T18:05:00+08:00
+**Priority**: high
+**Status**: resolved
+**Area**: frontend
+
+### Summary
+
+静态官网的关键动画运行时优先使用普通延迟脚本，避免 `.mjs` MIME 与 `file://` 模块限制造成跨环境失效。
+
+### Details
+
+同一吉祥物动画在 Codex 内置浏览器可运行，但 Chrome 直接打开本地文件时受 ES Module 本地源限制，生产 Nginx 又把 `.mjs` 返回为 `application/octet-stream`，导致 Chrome 严格 MIME 检查拒绝执行。把无依赖运行时改为普通 `defer` 脚本后，本地文件和常见静态托管均不再依赖 Module MIME 配置。
+
+### Suggested Action
+
+对无需模块图的落地页运行时使用经典 `.js` 脚本；若确需 ES Module，发布前必须检查 `.mjs` 的响应 `Content-Type`，并通过 HTTP 服务器而非 `file://` 预览。
+
+### Metadata
+
+- Source: error
+- Related Files: website/mascot.js, website/index.html, website/zh/index.html
+- Tags: static-hosting, es-modules, mime, chrome, nginx
+- Pattern-Key: frontend.static_runtime_module_mime
+- Recurrence-Count: 1
+- First-Seen: 2026-08-21
+- Last-Seen: 2026-08-21
+
+### Resolution
+
+- **Resolved**: 2026-08-21T18:02:46+08:00
+- **Commit/PR**: 75bf1cf
+- **Notes**: 吉祥物运行时改为普通延迟脚本，并加入双语页面回归测试。
+
+---
