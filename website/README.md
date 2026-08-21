@@ -5,6 +5,7 @@ This directory contains the dependency-free, bilingual public landing page for A
 - `/` is the default English page.
 - `/zh/` is the Simplified Chinese page.
 - Both pages have self-referencing canonicals and reciprocal hreflang links.
+- The default English entry redirects first-time visitors whose browser primary language is Chinese to `/zh/`. A language-link choice is saved locally and takes priority on later visits; explicitly opened `/zh/` URLs remain Chinese.
 
 ## Preview
 

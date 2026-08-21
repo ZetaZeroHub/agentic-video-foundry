@@ -97,3 +97,11 @@ test("metadata retains canonical bilingual discovery", () => {
     assert.match(html, /"@type"\s*:\s*"FAQPage"/);
   }
 });
+
+test("both locales load the early language preference controller", () => {
+  assert.match(english, /<script src="\.\/language\.js\?v=20260821a"><\/script>/);
+  assert.match(chinese, /<script src="\.\.\/language\.js\?v=20260821a"><\/script>/);
+  for (const html of [english, chinese]) {
+    assert.ok(html.indexOf("language.js") < html.indexOf("site.js"));
+  }
+});

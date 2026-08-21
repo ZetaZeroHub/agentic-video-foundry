@@ -223,3 +223,40 @@ Node/Remotion 进程的 PATH 可能看不到宿主终端中的 ffmpeg；Apple Si
 - **Notes**: 吉祥物运行时改为普通延迟脚本，并加入双语页面回归测试。
 
 ---
+
+## [LRN-20260821-002] best_practice
+
+**Logged**: 2026-08-21T19:10:00+08:00
+**Priority**: medium
+**Status**: resolved
+**Area**: frontend
+
+### Summary
+
+语言选择必须形成“写入偏好、启动时读取、明确链接优先”的闭环，不能只在点击语言链接时写入本地存储。
+
+### Details
+
+旧官网会把用户点击的中英文选择写入 `localStorage`，但页面启动时从未读取该值，也没有读取浏览器主语言，因此看似保留了双语入口，实际自动切换功能不存在。静态双语站应在首屏脚本阶段解析已保存选择和 `navigator.languages[0]`；保存选择优先，默认英文入口才执行自动中文跳转，明确打开的 `/zh/` 页面保持不变，避免共享链接和 SEO URL 被反向重定向。
+
+### Suggested Action
+
+双语静态站同时测试中文浏览器首访、手动英文覆盖、显式中文 URL、本地 `file://` 预览，以及查询参数和锚点保留。
+
+### Metadata
+
+- Source: user_feedback
+- Related Files: website/language.js, website/site.js, website/index.html, website/zh/index.html
+- Tags: i18n, language-routing, local-storage, static-hosting
+- Pattern-Key: frontend.language_preference_read_write_loop
+- Recurrence-Count: 1
+- First-Seen: 2026-08-21
+- Last-Seen: 2026-08-21
+
+### Resolution
+
+- **Resolved**: 2026-08-21T19:10:00+08:00
+- **Commit/PR**: same delivery commit
+- **Notes**: 新增早期语言控制器及浏览器执行回归测试。
+
+---
