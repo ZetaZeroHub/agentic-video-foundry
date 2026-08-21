@@ -64,6 +64,20 @@ test("all five mascot actions use webp with png fallback dimensions", () => {
   }
 });
 
+test("mascot runtime uses a classic deferred script for file and static-host compatibility", () => {
+  assert.match(english, /<script defer src="\.\/mascot\.js\?v=20260821c"><\/script>/);
+  assert.match(chinese, /<script defer src="\.\.\/mascot\.js\?v=20260821c"><\/script>/);
+  for (const html of [english, chinese]) {
+    assert.doesNotMatch(html, /type="module"/);
+    assert.doesNotMatch(html, /mascot\.mjs/);
+  }
+});
+
+test("quality section omits the removed technical-report card", () => {
+  assert.doesNotMatch(english, /View acceptance details|The technical report records/);
+  assert.doesNotMatch(chinese, /查看验收细节|技术报告会记录/);
+});
+
 test("compatibility and audio-provider facts remain visible", () => {
   for (const name of ["Codex", "Claude Code", "Trae", "Gemini CLI", "Kimi Code", "MiniMax", "WorkBuddy", "Manus"]) {
     assert.match(english, new RegExp(name));

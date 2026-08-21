@@ -1,6 +1,9 @@
 import assert from "node:assert/strict";
+import { createRequire } from "node:module";
 import { test } from "node:test";
-import { nextFrameIndex, shouldAnimate } from "../mascot.mjs";
+
+const require = createRequire(import.meta.url);
+const { nextFrameIndex, shouldAnimate } = require("../mascot.js");
 
 test("mascot frames loop through a three-frame stop-motion cycle", () => {
   assert.equal(nextFrameIndex(0), 1);
