@@ -3,265 +3,39 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta http-equiv="content-language" content="en" />
-    <meta name="description" content="Agentic Video Foundry is an open-source Agent Skill for verified short videos with real demos, ElevenLabs or Volcengine AI voice, music and SFX, precise captions, deterministic rendering, and hard QC." />
-    <meta name="keywords" content="Agentic Video Foundry, Agent Skill, Codex video, Remotion workflow, AI video production, short video automation" />
-    <meta name="author" content="ZetaZeroHub" />
-    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
-    <meta name="theme-color" content="#ffd400" />
+    <title>Agentic Video Foundry — Turn one request into a publishable video</title>
+    <meta name="description" content="An open-source Agent Skill that plans, voices, edits, checks, and delivers short videos from one clear request." />
+    <meta name="theme-color" content="#ffdc00" />
     <link rel="canonical" href="https://video.zzh.app/" />
     <link rel="alternate" hreflang="en" href="https://video.zzh.app/" />
-    <link rel="alternate" hreflang="zh-Hans" href="https://video.zzh.app/zh/" />
+    <link rel="alternate" hreflang="zh-CN" href="https://video.zzh.app/zh/" />
     <link rel="alternate" hreflang="x-default" href="https://video.zzh.app/" />
-    <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="Agentic Video Foundry" />
-    <meta property="og:title" content="Agentic Video Foundry — From Brief to Verified Video" />
-    <meta property="og:description" content="An open-source Agent Skill for scripting, real demos, audio, deterministic rendering, subtitles, QC, and editable video delivery." />
-    <meta property="og:url" content="https://video.zzh.app/" />
-    <meta property="og:image" content="https://video.zzh.app/assets/og-cover.png" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta property="og:locale" content="en_US" />
-    <meta property="og:locale:alternate" content="zh_CN" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Agentic Video Foundry — From Brief to Verified Video" />
-    <meta name="twitter:description" content="A reusable Agent Skill for producing short videos with real evidence, precise audio timing, deterministic rendering, and hard QC gates." />
-    <meta name="twitter:image" content="https://video.zzh.app/assets/og-cover.png" />
-    <title>AI Video Production Agent Skill | Agentic Video Foundry</title>
-    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="./assets/apple-touch-icon.png" />
     <link rel="manifest" href="./site.webmanifest" />
-    <link rel="stylesheet" href="./styles.css?v=20250819" />
+    <link rel="stylesheet" href="./styles.css?v=20260821b" />
+    <meta property="og:type" content="website" /><meta property="og:url" content="https://video.zzh.app/" /><meta property="og:title" content="Agentic Video Foundry — One request to a publishable video" /><meta property="og:description" content="Watch the finished film, see the four working documents, choose audio and visual styles, then install the open-source Skill." /><meta property="og:image" content="https://video.zzh.app/assets/og-cover.png" />
+    <meta name="twitter:card" content="summary_large_image" /><meta name="twitter:title" content="Agentic Video Foundry — One request to a publishable video" /><meta name="twitter:description" content="A practical Agent Skill for making and delivering short videos." /><meta name="twitter:image" content="https://video.zzh.app/assets/og-cover.png" />
     <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@graph": [
-          {
-            "@type": "SoftwareApplication",
-            "@id": "https://video.zzh.app/#software",
-            "name": "Agentic Video Foundry",
-            "applicationCategory": "MultimediaApplication",
-            "operatingSystem": "Cross-platform coding agents",
-            "description": "An open-source Agent Skill that turns a creative brief into a verified short video production pipeline.",
-            "url": "https://video.zzh.app/",
-            "downloadUrl": "https://github.com/ZetaZeroHub/agentic-video-foundry",
-            "codeRepository": "https://github.com/ZetaZeroHub/agentic-video-foundry",
-            "license": "https://github.com/ZetaZeroHub/agentic-video-foundry/blob/main/LICENSE",
-            "isAccessibleForFree": true,
-            "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-            "inLanguage": ["en", "zh-Hans"]
-          },
-          {
-            "@type": "HowTo",
-            "@id": "https://video.zzh.app/#install",
-            "name": "How to install Agentic Video Foundry globally",
-            "totalTime": "PT2M",
-            "supply": [{ "@type": "HowToSupply", "name": "Node.js and npx" }],
-            "step": [
-              { "@type": "HowToStep", "position": 1, "name": "Run the install command", "text": "Run npx skills add ZetaZeroHub/agentic-video-foundry@agentic-video-foundry -g -y in a terminal." },
-              { "@type": "HowToStep", "position": 2, "name": "Restart your coding agent", "text": "Restart Codex, Claude Code, Gemini CLI, or another Agent Skills compatible tool." },
-              { "@type": "HowToStep", "position": 3, "name": "Describe the video", "text": "Invoke $agentic-video-foundry and provide the goal, platform, duration, source material, and desired style." }
-            ]
-          },
-          {
-            "@type": "FAQPage",
-            "@id": "https://video.zzh.app/#faq",
-            "mainEntity": [
-              { "@type": "Question", "name": "What is Agentic Video Foundry?", "acceptedAnswer": { "@type": "Answer", "text": "Agentic Video Foundry is an open-source Agent Skill that coordinates briefing, storyboarding, real product demos, voice, music, sound effects, subtitles, deterministic rendering, visual review, audio measurement, and editable delivery." } },
-              { "@type": "Question", "name": "Which coding agents can use it?", "acceptedAnswer": { "@type": "Answer", "text": "Current targets include Codex, Claude Code, Trae, Gemini CLI, Kimi Code, MiniMax, and other environments that can load Agent Skills or repository instructions." } },
-              { "@type": "Question", "name": "Does the public repository include paid media or API keys?", "acceptedAnswer": { "@type": "Answer", "text": "No. Credentials are read from the operating system keychain or environment variables, and paid or private media stays outside Git history. Public deployment media is packaged separately after approval." } },
-              { "@type": "Question", "name": "Which renderer does Agentic Video Foundry use?", "acceptedAnswer": { "@type": "Answer", "text": "Remotion is the default master timeline. Text-to-Lottie can supply vector assets, HyperFrames can produce HTML and GSAP scenes, and optional scene libraries are vendored into the project when appropriate." } }
-            ]
-          }
-        ]
-      }
+      {"@context":"https://schema.org","@graph":[{"@type":"SoftwareApplication","name":"Agentic Video Foundry","applicationCategory":"MultimediaApplication","operatingSystem":"Cross-platform","url":"https://video.zzh.app/","downloadUrl":"https://github.com/ZetaZeroHub/agentic-video-foundry","license":"https://github.com/ZetaZeroHub/agentic-video-foundry/blob/main/LICENSE","description":"An open-source Agent Skill that plans, voices, edits, checks, and delivers short videos."},{"@type":"VideoObject","name":"Agentic Video Foundry launch film","description":"A complete launch film made with the workflow it demonstrates.","thumbnailUrl":"https://video.zzh.app/assets/og-cover.png","contentUrl":"https://video.zzh.app/assets/agentic-video-foundry-demo.mp4","duration":"PT4M15S","uploadDate":"2026-08-21"},{"@type":"HowTo","name":"Make a short video with Agentic Video Foundry","step":[{"@type":"HowToStep","name":"Answer three questions","text":"Define the audience, publishing platform, and duration."},{"@type":"HowToStep","name":"Approve four working documents","text":"Review the goal brief, storyboard, visual guide, and independent prototype."},{"@type":"HowToStep","name":"Build the film","text":"Create the visuals, narration, music, effects, and captions."},{"@type":"HowToStep","name":"Check and deliver","text":"Watch, listen, verify, and export the finished film with editable parts."}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Can I use it if I do not edit video?","acceptedAnswer":{"@type":"Answer","text":"Yes. Describe the audience, platform, length, material, and result; the Skill creates visible checkpoints you can approve."}},{"@type":"Question","name":"Can I use my own media?","acceptedAnswer":{"@type":"Answer","text":"Yes. Images, recordings, and existing video can become the main evidence in the film."}},{"@type":"Question","name":"Can I change the voice or style?","acceptedAnswer":{"@type":"Answer","text":"Yes. Audition another voice, rebalance audio, switch templates, or add a custom style before final delivery."}}]}]}
     </script>
-    <script>
-      (function () {
-        try {
-          var preferred = window.localStorage.getItem('preferred-language');
-          if (preferred === 'en') {
-            return;
-          }
-          var language = (preferred || window.navigator.language || '').toLowerCase();
-          if (language.indexOf('zh') === 0) {
-            window.location.replace('./zh/');
-          }
-        } catch (error) {
-          /* Language detection unavailable; keep the current page. */
-        }
-      })();
-    </script>
-    <script src="./site.js?v=20250819" defer></script>
+    <script src="./site.js?v=20260821b" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
-    <header class="site-header" data-header>
-      <a class="brand" href="#top" aria-label="Agentic Video Foundry home"><span class="brand-mark" aria-hidden="true">AV</span><span>AGENTIC VIDEO FOUNDRY</span></a>
-      <nav class="site-nav" aria-label="Primary navigation">
-        <a href="#workflow">Workflow</a><a href="#audio-providers">Audio</a><a href="#style-presets">Styles</a><a href="#evidence">Watch</a><a href="#case-study">Case study</a><a href="https://github.com/ZetaZeroHub/agentic-video-foundry">GitHub</a><a class="language-link" href="./zh/" lang="zh-Hans" hreflang="zh-Hans">中文</a><a class="nav-cta" href="#install">Install Skill</a>
-      </nav>
-    </header>
+    <header class="site-header" data-header><a class="brand" href="#top" aria-label="Agentic Video Foundry home"><span class="brand-mark">AV</span><span>Agentic Video Foundry</span></a><button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="site-nav">Menu</button><nav class="site-nav" id="site-nav" data-nav aria-label="Primary navigation"><a href="#film">Watch</a><a href="#diagnosis">How it works</a><a href="#styles">Styles</a><a href="#install" class="nav-cta">Install</a><a href="https://github.com/ZetaZeroHub/agentic-video-foundry">GitHub</a><a class="language-link" href="./zh/" hreflang="zh-CN" lang="zh-CN">中文</a></nav></header>
     <main id="main">
-      <section class="hero" id="top" aria-labelledby="hero-title">
-        <div class="hero-copy">
-          <p class="eyebrow">THIS SKILL IS EDITING ITS OWN LAUNCH VIDEO</p>
-          <h1 id="hero-title">One brief<span>to a verified video</span></h1>
-          <p class="hero-lead">Agentic Video Foundry is an open-source Agent Skill that turns scripting, real product demos, AI voice, music, sound effects, precise captions, deterministic rendering, and quality control into one reusable production pipeline.</p>
-          <div class="audio-provider-callout" aria-label="AI audio providers"><span class="provider-kicker">MULTIMODAL AI AUDIO</span><span class="provider-pill"><img src="./assets/brands/elevenlabs.svg" alt="" />ElevenLabs</span><span class="provider-or">or</span><span class="provider-pill"><img src="./assets/brands/volcengine-color.svg" alt="" />Volcengine</span></div>
-          <div class="hero-actions"><a class="button button-primary" href="#install">Install now</a><a class="button button-secondary" href="#evidence">Watch the output</a></div>
-          <div class="agent-compatibility" aria-label="Compatible coding agent environments"><span>RUN IT FROM</span><div class="agent-logo-row"><span><img src="./assets/brands/codex-color.svg" alt="" />Codex</span><span><img src="./assets/brands/claudecode-color.svg" alt="" />Claude Code</span><span><img src="./assets/brands/trae-color.svg" alt="" />Trae</span><span><img src="./assets/brands/gemini-color.svg" alt="" />Gemini CLI</span><span><img src="./assets/brands/kimi-color.svg" alt="" />Kimi Code</span><span><img src="./assets/brands/minimax-color.svg" alt="" />MiniMax</span></div></div>
-        </div>
-        <div class="hero-stage" aria-label="Agentic Video Foundry production workflow">
-          <div class="browser-card">
-            <div class="browser-dots" aria-hidden="true"><i></i><i></i><i></i></div>
-            <p class="terminal-line"><span class="terminal-prompt">$</span> Use Agentic Video Foundry to produce a launch video about itself.</p>
-            <div class="build-status"><span class="status-dot" aria-hidden="true"></span><strong>Building an auditable video project</strong></div>
-            <ol class="build-steps" aria-label="Production stages"><li class="is-done">brief</li><li class="is-done">storyboard</li><li class="is-done">voice</li><li class="is-active">timeline</li><li>render</li><li>audit</li></ol>
-            <div class="mini-output"><span>9 standalone MP4s</span><span>4 editable audio stems</span></div>
-          </div>
-          <div class="burst burst-one" aria-hidden="true">REAL DEMOS!</div><div class="burst burst-two" aria-hidden="true">FRAME-ACCURATE</div>
-        </div>
-      </section>
-      <section class="proof-strip" aria-label="Core capability numbers"><article><strong>1</strong><span>master timeline</span></article><article><strong>2</strong><span>audio providers</span></article><article><strong>3</strong><span>scene routes</span></article><article><strong>9</strong><span>modular exports</span></article></section>
-      <section class="section workflow-section" id="workflow" aria-labelledby="workflow-title">
-        <div class="section-heading"><div><p class="section-kicker">THE WORKFLOW</p><h2 id="workflow-title">Not a pile of effects.<br />A chain of evidence.</h2></div><p>Every capability maps to a real action and a real deliverable. Motion explains, crops, and focuses; it never replaces the product evidence that should be on screen.</p></div>
-        <div class="workflow-grid">
-          <article class="workflow-card card-paper"><span class="card-number">01</span><p class="card-label">BRIEF</p><h3>Diagnose the job</h3><p>Lock the audience, platform, duration, message, CTA, and evidence the viewer must see.</p><ul><li>One-line goal</li><li>Evidence plan</li><li>Explicit exclusions</li></ul></article>
-          <article class="workflow-card card-cyan"><span class="card-number">02</span><p class="card-label">DESIGN</p><h3>Storyboard and style</h3><p>Give every shot one job, then choose paper collage, pop art, or a real product demonstration.</p><ul><li>One hero per shot</li><li>Style preset</li><li>Representative frames</li></ul></article>
-          <article class="workflow-card card-yellow"><span class="card-number">03</span><p class="card-label">AUDIO</p><h3>Generate, audition, align</h3><p>Route ElevenLabs or Volcengine across narration, voice candidates, AI music, and interactive SFX. Real audio timestamps drive captions and scenes.</p><ul><li>Multi-voice audition</li><li>AI BGM + interaction SFX</li><li>Strict audio-caption alignment</li></ul></article>
-          <article class="workflow-card card-red"><span class="card-number">04</span><p class="card-label">ROUTING</p><h3>Use each tool for its strength</h3><p>Remotion owns the master timeline. Lottie and HyperFrames serve only the scenes they fit.</p><ul><li>One master chain</li><li>Frozen exchange assets</li><li>Final revalidation</li></ul></article>
-          <article class="workflow-card card-blue"><span class="card-number">05</span><p class="card-label">RENDER</p><h3>Deterministic composition</h3><p>Frame-driven motion keeps captions, sound cues, and batch variants reproducible.</p><ul><li>Data timeline</li><li>No random drift</li><li>Still-frame preflight</li></ul></article>
-          <article class="workflow-card card-white"><span class="card-number">06</span><p class="card-label">DELIVERY</p><h3>Verify before shipping</h3><p>Full watch-through, phone-speaker review, encoding, loudness, true peak, and manifests are hard gates.</p><ul><li>Visual QA</li><li>Audio QA</li><li>Editable assets</li></ul></article>
-        </div>
-      </section>
-      <section class="section audio-providers-section" id="audio-providers" aria-labelledby="audio-providers-title">
-        <div class="section-heading"><div><p class="section-kicker">AUDIO BACKENDS</p><h2 id="audio-providers-title">Two providers.<br />Not one URL.</h2></div><p>ElevenLabs and Volcengine are swappable audio backends, not interchangeable URLs. Each maps real capabilities to real roles in the pipeline.</p></div>
-        <div class="providers-grid">
-          <article class="provider-card provider-elevenlabs">
-            <div class="provider-header"><span class="provider-badge">PROVIDER A</span><h3>ElevenLabs</h3></div>
-            <ul class="provider-capabilities">
-              <li><span class="cap-role">TTS</span> Timestamped narration with character or word-level alignment</li>
-              <li><span class="cap-role">MUSIC</span> Music API with structure and duration prompts</li>
-              <li><span class="cap-role">SFX</span> Sound Effects API for precise cue points</li>
-              <li><span class="cap-role">VOICE</span> Voice Design and Library for custom timbres</li>
-            </ul>
-          </article>
-          <article class="provider-card provider-volcengine">
-            <div class="provider-header"><span class="provider-badge">PROVIDER B</span><h3>Volcengine Doubao</h3></div>
-            <ul class="provider-capabilities">
-              <li><span class="cap-role">TTS</span> Seed Audio TTS with sentence or word timestamps</li>
-              <li><span class="cap-role">MUSIC</span> Pure prompt-driven music generation</li>
-              <li><span class="cap-role">SFX</span> Pure prompt-driven sound effects</li>
-              <li><span class="cap-role">VOICE</span> Voice design and voice clone with authorized samples</li>
-            </ul>
-          </article>
-        </div>
-        <div class="capability-matrix" role="table" aria-label="Audio provider capability matrix">
-          <div class="matrix-row matrix-header" role="row">
-            <div class="matrix-cell matrix-task" role="columnheader">Task</div>
-            <div class="matrix-cell matrix-provider" role="columnheader">ElevenLabs</div>
-            <div class="matrix-cell matrix-provider" role="columnheader">Volcengine</div>
-          </div>
-          <div class="matrix-row" role="row">
-            <div class="matrix-cell matrix-task" role="cell">Narration 30-90s</div>
-            <div class="matrix-cell" role="cell">Timestamped TTS</div>
-            <div class="matrix-cell" role="cell">Seed Audio TTS</div>
-          </div>
-          <div class="matrix-row" role="row">
-            <div class="matrix-cell matrix-task" role="cell">Caption timing</div>
-            <div class="matrix-cell" role="cell">Character alignment</div>
-            <div class="matrix-cell" role="cell">enable_subtitle=true</div>
-          </div>
-          <div class="matrix-row" role="row">
-            <div class="matrix-cell matrix-task" role="cell">Background music</div>
-            <div class="matrix-cell" role="cell">Music API</div>
-            <div class="matrix-cell" role="cell">Pure prompt generation</div>
-          </div>
-          <div class="matrix-row" role="row">
-            <div class="matrix-cell matrix-task" role="cell">Sound effects</div>
-            <div class="matrix-cell" role="cell">Sound Effects API</div>
-            <div class="matrix-cell" role="cell">Pure prompt generation</div>
-          </div>
-          <div class="matrix-row" role="row">
-            <div class="matrix-cell matrix-task" role="cell">Voice design</div>
-            <div class="matrix-cell" role="cell">Voice Design/Library</div>
-            <div class="matrix-cell" role="cell">voice_design endpoint</div>
-          </div>
-          <div class="matrix-row" role="row">
-            <div class="matrix-cell matrix-task" role="cell">Voice clone</div>
-            <div class="matrix-cell" role="cell">Plan + authorization</div>
-            <div class="matrix-cell" role="cell">voice_clone endpoint</div>
-          </div>
-        </div>
-        <div class="provider-warning"><span class="warning-icon" aria-hidden="true">!</span><p>Switching providers means rebuilding the audio system: new durations, new caption timing, new gain calibration, fresh LUFS and dBTP measurements. Old timeline values are void.</p></div>
-      </section>
-      <section class="section style-presets-section" id="style-presets" aria-labelledby="style-presets-title" data-preset-active="comic-pop-art-motion">
-        <div class="section-heading"><div><p class="section-kicker">STYLE PRESETS</p><h2 id="style-presets-title">Two presets.<br />Not one palette.</h2></div><p>Each style preset controls material, palette, typography, motion grammar, density limits, and hard failures. Switch below to see the preset take over this section.</p></div>
-        <div class="preset-tabs" role="tablist" aria-label="Style preset selector">
-          <button class="preset-tab is-active" type="button" role="tab" aria-selected="true" aria-controls="preset-panel-pop" id="preset-tab-pop" data-preset="comic-pop-art-motion">Comic Pop-Art</button>
-          <button class="preset-tab" type="button" role="tab" aria-selected="false" aria-controls="preset-panel-paper" id="preset-tab-paper" data-preset="flat-paper-collage-stop-motion">Paper Collage</button>
-        </div>
-        <div class="preset-panels">
-          <div class="preset-panel is-active" id="preset-panel-pop" role="tabpanel" aria-labelledby="preset-tab-pop" data-preset-panel="comic-pop-art-motion">
-            <div class="preset-visual preset-visual-pop" aria-hidden="true">
-              <div class="preset-demo-panel">
-                <div class="demo-headline">BOLD</div>
-                <div class="demo-subline">Four-color print</div>
-                <div class="demo-halftone"></div>
-                <div class="demo-burst">SNAP!</div>
-              </div>
-            </div>
-            <div class="preset-rules">
-              <article class="rule-card rule-palette"><h4>Palette</h4><div class="swatch-grid"><span class="swatch" style="background:#101010" title="Ink"></span><span class="swatch" style="background:#FFF7E8" title="Paper"></span><span class="swatch" style="background:#FFD400" title="Yellow"></span><span class="swatch" style="background:#00B7D9" title="Cyan"></span><span class="swatch" style="background:#F2385A" title="Red"></span><span class="swatch" style="background:#2457D6" title="Blue"></span></div><p>Ink black, warm paper, electric yellow, bright cyan, hot red, cobalt blue. Max 3 high-saturation colors per frame.</p></article>
-              <article class="rule-card rule-motion"><h4>Motion</h4><p>Energetic snap. 6-frame base unit, 12% hero overshoot, 18-frame result holds. Panel slam, ink wipe, match cut transitions only.</p></article>
-              <article class="rule-card rule-density"><h4>Density</h4><p>1 hero per frame, max 2 supporters, max 3 panels at peak. Hero occupies 40-68% of canvas.</p></article>
-              <article class="rule-card rule-forbidden"><h4>Forbidden</h4><p>No 3D flip, no liquid morph, no strobing, no continuous camera breathing, no unseeded jitter.</p></article>
-              <article class="rule-card rule-usage"><h4>Usage</h4><p><code>assets/style-presets/comic-pop-art-motion.json</code></p><p>Copy into project before implementation. Override palette and motion tokens only. Never override single hero, 3-color limit, evidence readability, or deterministic frame drive.</p></article>
-            </div>
-          </div>
-          <div class="preset-panel" id="preset-panel-paper" role="tabpanel" aria-labelledby="preset-tab-paper" data-preset-panel="flat-paper-collage-stop-motion" hidden>
-            <div class="preset-visual preset-visual-paper" aria-hidden="true">
-              <div class="preset-demo-panel">
-                <div class="demo-headline-paper">Torn</div>
-                <div class="demo-subline-paper">Stop-motion collage</div>
-                <div class="demo-torn-edge"></div>
-                <div class="demo-tape"></div>
-              </div>
-            </div>
-            <div class="preset-rules">
-              <article class="rule-card rule-palette"><h4>Palette</h4><div class="swatch-grid"><span class="swatch" style="background:#25221F" title="Ink"></span><span class="swatch" style="background:#F5EDD8" title="Paper"></span><span class="swatch" style="background:#8B6340" title="Clay"></span><span class="swatch" style="background:#5C8A3A" title="Grass"></span><span class="swatch" style="background:#7EC8E3" title="Sky"></span><span class="swatch" style="background:#F0C75E" title="Warm Yellow"></span></div><p>Warm fiber paper, clay brown, grass green, sky blue, warm yellow. Low-saturation offset print feel.</p></article>
-              <article class="rule-card rule-motion"><h4>Motion</h4><p>Stop-motion holds. 2-6 frame irregular holds, 6px micro-sway, max 3° rotation, single settle overshoot. Paper wipe, hand-set slide, page push transitions.</p></article>
-              <article class="rule-card rule-density"><h4>Density</h4><p>1 hero per frame, max 2 supporters, max 6 paper groups. Subject occupies 35-60% of canvas.</p></article>
-              <article class="rule-card rule-forbidden"><h4>Forbidden</h4><p>No continuous floating, no shape morphing, no unseeded random jitter, no simultaneous everything.</p></article>
-              <article class="rule-card rule-usage"><h4>Usage</h4><p><code>assets/style-presets/flat-paper-collage-stop-motion.json</code></p><p>Copy into project before implementation. Override palette, texture opacity, edge roughness, hold patterns only. Never override single hero, Chinese priority, rigid paper, deterministic motion, or evidence preservation.</p></article>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="section evidence-section" id="evidence" aria-labelledby="evidence-title">
-        <div class="section-heading evidence-heading"><div><p class="section-kicker">WATCH THE OUTPUT</p><h2 id="evidence-title">Let the finished video prove it</h2></div><p>Scroll the player into view and the approved master starts muted. This is the real delivery produced by the workflow, not a concept animation made only for the website.</p></div>
-        <div class="evidence-layout">
-          <div class="evidence-video-card" data-video-card>
-            <div class="evidence-video-toolbar"><span>FINAL CUT / V6</span><span class="video-state" data-video-state>Waiting for viewport</span></div>
-            <div class="evidence-video-frame"><video data-evidence-video muted playsinline preload="metadata" aria-label="Complete Agentic Video Foundry launch video"><source src="./assets/agentic-video-foundry-demo.mp4" type="video/mp4" />Your browser does not support HTML5 video.</video><div class="video-badge">AUTOPLAYS IN VIEW · MUTED</div><div class="video-controls" aria-label="Video controls"><button type="button" data-video-toggle aria-label="Play video">Play</button><button type="button" data-video-mute aria-label="Turn video sound on">Sound on</button></div></div>
-            <p class="evidence-video-caption">From brief, real demos, voice, and music to frame-accurate composition, captions, stems, and QC—the complete 168-second master is here.</p>
-          </div>
-          <div class="evidence-notes"><article><strong>168 SEC</strong><h3>A complete film, not a mockup</h3><p>The hook, workflow, editable delivery, and real case study share one master timeline.</p></article><article><strong>9 SCENES</strong><h3>Every chapter can stand alone</h3><p>Each scene can export as its own MP4 with narration, BGM, SFX, case audio, and captions.</p></article><article><strong>PASS</strong><h3>Hard gates before delivery</h3><p>1080×1920, 30 fps, loudness, true peak, captions, and edit-point noise are checked.</p></article></div>
-        </div>
-      </section>
-      <section class="section self-demo" aria-labelledby="self-demo-title"><div class="self-demo-copy"><p class="section-kicker">THE META DEMO</p><h2 id="self-demo-title">The Skill<br />edits itself</h2><p>This launch video comes from the same Skill, script, and master timeline it promotes. Prompts, design decisions, screen recordings, audio, renders, and acceptance evidence all map back to real project assets.</p></div><div class="loop-diagram" aria-label="Self-demonstrating production loop"><span>Brief</span><i aria-hidden="true">→</i><span>Skill</span><i aria-hidden="true">→</i><span>Project</span><i aria-hidden="true">→</i><span>Video</span><i aria-hidden="true">↺</i></div></section>
-      <section class="section case-section" id="case-study" aria-labelledby="case-title">
-        <div class="section-heading case-heading"><div><p class="section-kicker">CASE STUDY</p><h2 id="case-title">Prove the process.<br />Then prove the result.</h2></div><p>The same workflow organized the footage, motion, sound, and pacing of an AI game platform launch film.</p></div>
-        <div class="case-panels" aria-label="AI game platform launch film overview"><article class="case-panel case-pink"><span>01</span><h3>Create games.<br />This simple.</h3><p>A high-contrast hook establishes the problem.</p></article><article class="case-panel case-cyan"><span>02</span><h3>One prompt.<br />A new world.</h3><p>The product capability becomes a visible action.</p></article><article class="case-panel case-yellow"><span>03</span><h3>A real,<br />playable result.</h3><p>The final experience closes the evidence loop.</p></article></div>
-        <p class="case-note">Paid and private case media is not distributed through the public Skill repository. The site shows only approved deployment media and verified production facts.</p>
-      </section>
-      <section class="section faq-section" id="faq" aria-labelledby="faq-title">
-        <div class="section-heading"><div><p class="section-kicker">FAQ</p><h2 id="faq-title">What teams ask before installing</h2></div><p>Direct answers about compatibility, rendering, credentials, and what “done” means in this workflow.</p></div>
-        <div class="faq-grid"><article><h3>What is Agentic Video Foundry?</h3><p>It is an open-source Agent Skill that coordinates briefing, storyboarding, real demos, narration, music, sound effects, subtitles, rendering, visual review, audio measurement, and editable delivery.</p></article><article><h3>Which coding agents can use it?</h3><p>Current targets include Codex, Claude Code, Trae, Gemini CLI, Kimi Code, MiniMax, and other environments that can load Agent Skills or repository instructions.</p></article><article><h3>Which renderer owns the timeline?</h3><p>Remotion is the default master compositor. Text-to-Lottie and HyperFrames are optional asset or scene routes, not competing master timelines.</p></article><article><h3>Are API keys or paid media public?</h3><p>No. Credentials stay in the OS keychain or environment variables. Paid and private media remains outside Git history and enters only separately approved deployment packages.</p></article></div>
-      </section>
-      <section class="section install-section" id="install" aria-labelledby="install-title"><div><p class="eyebrow">MIT · OPEN SOURCE</p><h2 id="install-title">Install the workflow.<br />Ship the next film.</h2><p>Install globally, then describe the goal, platform, duration, source material, and visual direction in any compatible Agent Skills tool.</p></div><div class="install-panel"><p>Global install</p><pre><code data-install-command>npx skills add ZetaZeroHub/agentic-video-foundry@agentic-video-foundry -g -y</code></pre><button class="copy-button" type="button" data-copy-button aria-describedby="copy-status">Copy install command</button><p class="copy-status" id="copy-status" role="status" aria-live="polite"></p><a class="repo-link" href="https://github.com/ZetaZeroHub/agentic-video-foundry">View the GitHub repository →</a></div></section>
+      <section class="hero" id="top" aria-labelledby="hero-title"><div class="hero-copy"><p class="eyebrow">This launch video was made by the Skill itself</p><h1 id="hero-title">Describe the video.<span>Get something you can publish.</span></h1><p class="hero-lead">It asks who the video is for, where it will be posted, and how long it should run. Then it writes the script, plans the shots, builds the audio and captions, and delivers the finished video with editable parts.</p><div class="hero-actions"><a class="button button-primary" href="#film">Watch the full video</a><a class="button button-secondary" href="#install">Install the Skill</a></div><p class="case-proof">This page's video: <strong>half a day</strong> · <strong>4+ conversations</strong> · <strong>9 reusable chapters</strong></p></div><picture class="mascot-stage mascot-stage-hero" data-mascot="intro" data-mascot-once><source srcset="./assets/mascot/intro-1.webp" type="image/webp" /><img src="./assets/mascot/intro-1.png" width="418" height="418" alt="小铸 waves and points toward the finished video" fetchpriority="high" /></picture><div class="tool-strip" aria-label="Compatible AI tools"><span><img src="./assets/brands/codex-color.svg" alt="" />Codex</span><span><img src="./assets/brands/claudecode-color.svg" alt="" />Claude Code</span><span><img src="./assets/brands/trae-color.svg" alt="" />Trae</span><span><img src="./assets/brands/gemini-color.svg" alt="" />Gemini CLI</span><span><img src="./assets/brands/kimi-color.svg" alt="" />Kimi Code</span><span><img src="./assets/brands/minimax-color.svg" alt="" />MiniMax</span><span><img src="./assets/brands/workbuddy.svg" alt="" />WorkBuddy</span><span><img src="./assets/brands/manus.svg" alt="" />Manus</span></div></section>
+      <section class="section film-section" id="film" aria-labelledby="film-title"><div class="section-heading"><div><p class="section-kicker">THE FINISHED FILM</p><h2 id="film-title">See what the Skill actually makes</h2></div><p>This film started with one request. It plays muted when it enters view; turn on sound when you want to hear the narration, music, and effects.</p></div><div class="evidence-video-card"><div class="evidence-video-toolbar"><span>FINAL CUT / V6</span><span data-video-duration>Loading duration…</span></div><div class="evidence-video-frame"><video data-evidence-video controls muted playsinline preload="metadata" poster="./assets/og-cover.png" aria-label="Complete Agentic Video Foundry launch video"><source src="./assets/agentic-video-foundry-demo.mp4" type="video/mp4" />Your browser does not support HTML video.</video><p class="media-error" data-video-error hidden>The film could not be loaded. <a href="https://github.com/ZetaZeroHub/agentic-video-foundry">View the project on GitHub.</a></p></div><p class="evidence-video-caption">The same Skill planned, voiced, edited, checked, and delivered the video it is introducing.</p></div></section>
+      <section class="section diagnosis-section" id="diagnosis" aria-labelledby="diagnosis-title"><div class="section-with-mascot"><div><p class="section-kicker">START WITH THREE QUESTIONS</p><h2 id="diagnosis-title">Who is it for, where will it run, and how long should it be?</h2><p class="section-lead">The same idea needs a different opening, amount of detail, and pace on Xiaohongshu, Douyin, and Bilibili.</p><div class="method-grid"><article class="method-card"><strong>For beginners</strong><p>Lead with the result and explain terms only when they help.</p></article><article class="method-card"><strong>For specialists</strong><p>Keep the method, evidence, and useful settings.</p></article><article class="method-card"><strong>For short video</strong><p>Reach the point quickly and give every shot one job.</p></article><article class="method-card"><strong>For longer video</strong><p>Make room for context, proof, and a complete walkthrough.</p></article></div></div><picture class="mascot-stage" data-mascot="diagnosis"><source srcset="./assets/mascot/diagnosis-1.webp" type="image/webp" /><img src="./assets/mascot/diagnosis-1.png" width="418" height="418" loading="lazy" alt="小铸 thinks through the audience, platform, and duration" /></picture></div></section>
+      <section class="section documents-section" id="documents" aria-labelledby="documents-title"><div class="section-heading"><div><p class="section-kicker">FOUR WORKING DOCUMENTS</p><h2 id="documents-title">Turn one idea into a plan people can execute</h2></div><p>You approve the thinking before time is spent polishing the whole film.</p></div><div class="section-with-mascot"><div class="document-grid"><article class="document-card"><span>01</span><h3>Goal brief</h3><p>Who should watch, and what should they remember?</p></article><article class="document-card"><span>02</span><h3>Storyboard</h3><p>What appears in each shot, and which line of narration belongs there?</p></article><article class="document-card"><span>03</span><h3>Visual guide</h3><p>Which colors, type, motion, and mascot actions stay consistent?</p></article><article class="document-card"><span>04</span><h3>Independent prototype</h3><p>Build the hardest shot first, approve it, then expand the system.</p></article></div><picture class="mascot-stage" data-mascot="documents"><source srcset="./assets/mascot/documents-1.webp" type="image/webp" /><img src="./assets/mascot/documents-1.png" width="418" height="418" loading="lazy" alt="小铸 flips through and checks the four production documents" /></picture></div></section>
+      <section class="section audio-section" id="audio" aria-labelledby="audio-title"><div class="section-heading"><div><p class="section-kicker">AUDIO THAT FITS THE FILM</p><h2 id="audio-title">Choose the voice, build the soundtrack, and keep captions in sync</h2></div><p>The Skill integrates ElevenLabs and Volcengine. It can audition voices, make narration, background music, and interaction sounds, then align captions to the recorded delivery.</p></div><div class="provider-row" aria-label="Integrated audio providers"><span><img src="./assets/brands/elevenlabs.svg" alt="" />ElevenLabs</span><span><img src="./assets/brands/volcengine-color.svg" alt="" />Volcengine</span></div><div class="section-with-mascot"><ol class="audio-steps"><li class="audio-step"><strong>01 · Audition</strong><p>Try more than one voice before producing the final narration.</p></li><li class="audio-step"><strong>02 · Narrate</strong><p>Generate the approved script at a pace that sounds natural.</p></li><li class="audio-step"><strong>03 · Score</strong><p>Add music and small sounds that support actions without covering the voice.</p></li><li class="audio-step"><strong>04 · Align</strong><p>Use the finished speech timing to place complete caption lines.</p></li></ol><picture class="mascot-stage" data-mascot="audio"><source srcset="./assets/mascot/audio-1.webp" type="image/webp" /><img src="./assets/mascot/audio-1.png" width="418" height="418" loading="lazy" alt="小铸 listens to voice options and taps along with the soundtrack" /></picture></div><details class="technical-details"><summary>View integration details</summary><p>Keys stay in the operating-system keychain or environment variables. Provider setup, timestamps, voice-cloning permission, and final audio measurement are checked without exposing credentials in the repository.</p></details></section>
+      <section class="section styles-section" id="styles" aria-labelledby="styles-title" data-preset-active="pop"><div class="section-heading"><div><p class="section-kicker">VISUAL STYLES</p><h2 id="styles-title">Pick one, or add your own</h2></div><p>Pop art works well for bright, fast launch videos. Paper collage suits warmer stories with more texture. Each template keeps color, type, and motion consistent across shots.</p></div><div class="preset-tabs" role="tablist" aria-label="Visual style examples"><button class="preset-tab is-active" type="button" role="tab" aria-selected="true" aria-controls="preset-panel-pop" id="preset-tab-pop" data-preset="pop">Pop art</button><button class="preset-tab" type="button" role="tab" aria-selected="false" aria-controls="preset-panel-paper" id="preset-tab-paper" data-preset="paper" tabindex="-1">Paper collage</button></div><div class="preset-panels"><article class="preset-panel is-active preset-pop" id="preset-panel-pop" role="tabpanel" aria-labelledby="preset-tab-pop" data-preset-panel="pop"><div class="style-demo"><span class="style-word">MAKE IT</span><strong>LOUD</strong><i>Fast cuts · bold color · punchy type</i></div><details class="technical-details"><summary>How this template stays consistent</summary><p>It fixes a compact palette, heavy type, hard-edged motion, density limits, and safe text zones. New styles can add their own rules without changing the whole pipeline.</p></details></article><article class="preset-panel preset-paper" id="preset-panel-paper" role="tabpanel" aria-labelledby="preset-tab-paper" data-preset-panel="paper" hidden><div class="style-demo paper-demo"><span class="paper-piece">ONE IDEA</span><strong>TAKES SHAPE</strong><i>Rigid paper pieces · stepped motion · warm texture</i></div><details class="technical-details"><summary>How this template stays consistent</summary><p>It keeps torn edges, paper texture, flat layers, restrained colors, and discrete stop-motion. Pieces move without bending, melting, or drifting between shots.</p></details></article></div></section>
+      <section class="section quality-section" id="quality" aria-labelledby="quality-title"><div class="section-with-mascot"><div><p class="section-kicker">CHECK BEFORE DELIVERY</p><h2 id="quality-title">Watch it once. Listen once. Then deliver it.</h2><p class="section-lead">Check that captions are complete, phone-speaker audio is clear, transitions are clean, and the files can still be edited.</p><div class="quality-grid"><article class="quality-card"><strong>Complete captions</strong><p>No clipped sentence or missing word.</p></article><article class="quality-card"><strong>Clear on a phone</strong><p>Music stays present without hiding the voice.</p></article><article class="quality-card"><strong>Clean transitions</strong><p>No click, pop, flash, or accidental gap.</p></article><article class="quality-card"><strong>Ready to keep editing</strong><p>Receive the full film, chapter exports, audio tracks, and captions.</p></article></div></div><picture class="mascot-stage" data-mascot="qc"><source srcset="./assets/mascot/qc-1.webp" type="image/webp" /><img src="./assets/mascot/qc-1.png" width="418" height="418" loading="lazy" alt="小铸 uses a magnifier and checks the delivery" /></picture></div><details class="technical-details"><summary>View acceptance details</summary><p>The technical report records frame size, frame rate, encoding, audio measurements, subtitle timing, representative frames, and the complete watch-through.</p></details></section>
+      <section class="section faq-section" id="faq" aria-labelledby="faq-title"><div class="section-heading"><div><p class="section-kicker">FAQ</p><h2 id="faq-title">What people want to know before starting</h2></div></div><div class="faq-list"><details><summary>I do not edit video. Can I still use it?</summary><p>Yes. Start by describing the audience, platform, length, material, and result you want. The Skill turns that into working documents and visible checkpoints you can approve.</p></details><details><summary>Can I bring my own images, recordings, or existing video?</summary><p>Yes. Real product footage and user-provided material can become the main evidence instead of being covered by decorative animation.</p></details><details><summary>Can I change a voice or visual style I dislike?</summary><p>Yes. You can audition another voice, rebalance the music, change sound effects, switch templates, or add a custom style before the final render.</p></details><details><summary>Can I edit the result later?</summary><p>Yes. Delivery can include the complete film, standalone chapter videos, narration, music, effects, captions, and the project files used to compose them.</p></details><details><summary>Which AI tools can load it?</summary><p>Codex, Claude Code, Trae, Gemini CLI, Kimi Code, MiniMax, WorkBuddy, Manus, and other environments that can load Agent Skills or repository instructions.</p></details><details><summary>Do ElevenLabs or Volcengine cost extra?</summary><p>The Skill is open source. Audio-provider usage follows the account and plan you connect, so preview short samples before approving paid generation.</p></details></div></section>
+      <section class="section install-section" id="install" aria-labelledby="install-title"><div><p class="eyebrow">MIT · OPEN SOURCE</p><h2 id="install-title">Add it to the AI tool you already use</h2><p>Copy the command, restart your tool, and describe the video you want to make.</p><ol class="install-steps"><li>Copy the global install command.</li><li>Restart Codex, Claude Code, Trae, WorkBuddy, Manus, or another compatible tool.</li><li>Tell it the audience, platform, length, material, and visual direction.</li></ol></div><div class="install-panel"><p>Global install</p><pre><code data-install-command>npx skills add ZetaZeroHub/agentic-video-foundry@agentic-video-foundry -g -y</code></pre><button class="copy-button" type="button" data-copy-button aria-describedby="copy-status">Copy install command</button><p class="copy-status" id="copy-status" role="status" aria-live="polite"></p><a class="repo-link" href="https://github.com/ZetaZeroHub/agentic-video-foundry">View the GitHub repository →</a></div></section>
     </main>
-    <footer class="site-footer"><span>AGENTIC VIDEO FOUNDRY</span><span>One brief → verified video</span><a href="https://github.com/ZetaZeroHub/agentic-video-foundry/blob/main/LICENSE">MIT License</a></footer>
+    <footer class="site-footer"><span>AGENTIC VIDEO FOUNDRY</span><a href="https://video.zzh.app/">video.zzh.app</a><a href="https://github.com/ZetaZeroHub/agentic-video-foundry">GitHub</a><a href="https://github.com/ZetaZeroHub/agentic-video-foundry/blob/main/LICENSE">MIT License</a><a class="language-link" href="./zh/" hreflang="zh-CN" lang="zh-CN">中文</a></footer>
+    <script type="module" src="./mascot.mjs?v=20260821b"></script>
   </body>
 </html>

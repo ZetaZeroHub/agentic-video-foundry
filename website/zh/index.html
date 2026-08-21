@@ -1,207 +1,41 @@
 <!doctype html>
-<html lang="zh-Hans">
+<html lang="zh-CN">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta http-equiv="content-language" content="zh-CN" />
-    <meta name="description" content="Agentic Video Foundry 是一套开源 Agent Skill：用真实演示、ElevenLabs 或火山引擎 AI 口播/音乐/音效、精准字幕、确定性合成与硬质检，完成真正可发布的短视频。" />
-    <meta name="keywords" content="Agentic Video Foundry, Agent Skill, Codex 视频制作, Remotion 工作流, AI 视频制作, 短视频自动化" />
-    <meta name="author" content="ZetaZeroHub" />
-    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
-    <meta name="theme-color" content="#ffd400" />
+    <title>Agentic Video Foundry——一句需求，做到能发布的视频</title>
+    <meta name="description" content="一套开源 Agent Skill：先问清受众、平台和时长，再完成脚本、分镜、配音、音乐、字幕、质检和可编辑交付。" />
+    <meta name="theme-color" content="#ffdc00" />
     <link rel="canonical" href="https://video.zzh.app/zh/" />
     <link rel="alternate" hreflang="en" href="https://video.zzh.app/" />
-    <link rel="alternate" hreflang="zh-Hans" href="https://video.zzh.app/zh/" />
+    <link rel="alternate" hreflang="zh-CN" href="https://video.zzh.app/zh/" />
     <link rel="alternate" hreflang="x-default" href="https://video.zzh.app/" />
-    <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="Agentic Video Foundry" />
-    <meta property="og:title" content="Agentic Video Foundry｜一句需求，到验收成片" />
-    <meta property="og:description" content="开源 AI 视频 Agent Skill：剧本、真实演示、配音、音乐、字幕、逐帧合成、质检与可编辑交付。" />
-    <meta property="og:url" content="https://video.zzh.app/zh/" />
-    <meta property="og:image" content="https://video.zzh.app/assets/og-cover.png" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta property="og:locale" content="zh_CN" />
-    <meta property="og:locale:alternate" content="en_US" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Agentic Video Foundry｜一句需求，到验收成片" />
-    <meta name="twitter:description" content="一套面向 Codex 等 coding agents 的可复用短视频制作与硬验收工作流。" />
-    <meta name="twitter:image" content="https://video.zzh.app/assets/og-cover.png" />
-    <title>AI 视频制作 Agent Skill｜Agentic Video Foundry</title>
-    <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png" />
     <link rel="manifest" href="../site.webmanifest" />
-    <link rel="stylesheet" href="../styles.css?v=20250819" />
+    <link rel="stylesheet" href="../styles.css?v=20260821b" />
+    <meta property="og:type" content="website" /><meta property="og:url" content="https://video.zzh.app/zh/" /><meta property="og:title" content="Agentic Video Foundry——一句需求，做到能发布的视频" /><meta property="og:description" content="先看完整成片，再看四份工作文档、声音与画风如何落地。" /><meta property="og:image" content="https://video.zzh.app/assets/og-cover.png" />
+    <meta name="twitter:card" content="summary_large_image" /><meta name="twitter:title" content="Agentic Video Foundry——一句需求，做到能发布的视频" /><meta name="twitter:description" content="一套真正把短视频做完并交付的开源 Agent Skill。" /><meta name="twitter:image" content="https://video.zzh.app/assets/og-cover.png" />
     <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@graph": [
-          {
-            "@type": "SoftwareApplication",
-            "@id": "https://video.zzh.app/zh/#software",
-            "name": "Agentic Video Foundry",
-            "applicationCategory": "MultimediaApplication",
-            "operatingSystem": "跨平台 coding agents",
-            "description": "把创意简报转化为经过完整视听和技术验收的短视频生产线。",
-            "url": "https://video.zzh.app/zh/",
-            "downloadUrl": "https://github.com/ZetaZeroHub/agentic-video-foundry",
-            "codeRepository": "https://github.com/ZetaZeroHub/agentic-video-foundry",
-            "license": "https://github.com/ZetaZeroHub/agentic-video-foundry/blob/main/LICENSE",
-            "isAccessibleForFree": true,
-            "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-            "inLanguage": "zh-Hans"
-          },
-          {
-            "@type": "FAQPage",
-            "@id": "https://video.zzh.app/zh/#faq",
-            "mainEntity": [
-              { "@type": "Question", "name": "Agentic Video Foundry 是什么？", "acceptedAnswer": { "@type": "Answer", "text": "Agentic Video Foundry 是开源 Agent Skill，负责协调任务诊断、分镜、真实产品演示、配音、音乐、音效、字幕、确定性渲染、视觉复核、声音测量和可编辑交付。" } },
-              { "@type": "Question", "name": "哪些 coding agents 可以使用？", "acceptedAnswer": { "@type": "Answer", "text": "当前目标环境包括 Codex、Claude Code、Trae、Gemini CLI、Kimi Code、MiniMax，以及其他可加载 Agent Skills 或仓库指令的工具。" } },
-              { "@type": "Question", "name": "公开仓库会包含 API 密钥或付费素材吗？", "acceptedAnswer": { "@type": "Answer", "text": "不会。密钥仅从系统钥匙串或环境变量读取；付费及私有媒体不进入 Git 历史，批准公开的展示媒体单独进入部署包。" } },
-              { "@type": "Question", "name": "Agentic Video Foundry 使用哪个渲染器？", "acceptedAnswer": { "@type": "Answer", "text": "Remotion 默认负责唯一主时间轴。Text-to-Lottie 可提供矢量资产，HyperFrames 可制作 HTML 和 GSAP 场景，其他场景库按项目固定版本使用。" } }
-            ]
-          }
-        ]
-      }
+      {"@context":"https://schema.org","@graph":[{"@type":"SoftwareApplication","name":"Agentic Video Foundry","applicationCategory":"MultimediaApplication","operatingSystem":"跨平台","url":"https://video.zzh.app/zh/","downloadUrl":"https://github.com/ZetaZeroHub/agentic-video-foundry","license":"https://github.com/ZetaZeroHub/agentic-video-foundry/blob/main/LICENSE","description":"一套负责策划、配音、剪辑、检查和交付短视频的开源 Agent Skill。"},{"@type":"VideoObject","name":"Agentic Video Foundry 完整宣传片","description":"由这套工作流制作并展示其能力的完整成片。","thumbnailUrl":"https://video.zzh.app/assets/og-cover.png","contentUrl":"https://video.zzh.app/assets/agentic-video-foundry-demo.mp4","duration":"PT4M15S","uploadDate":"2026-08-21"},{"@type":"HowTo","name":"使用 Agentic Video Foundry 制作短视频","step":[{"@type":"HowToStep","name":"回答三个问题","text":"确定受众、发布平台和视频时长。"},{"@type":"HowToStep","name":"确认四份文档","text":"审核目标简报、分镜表、视觉规范和独立小样。"},{"@type":"HowToStep","name":"制作成片","text":"完成画面、旁白、音乐、音效和字幕。"},{"@type":"HowToStep","name":"检查并交付","text":"完整观看和收听后，导出成片与可编辑素材。"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"不会剪辑也能用吗？","acceptedAnswer":{"@type":"Answer","text":"可以。说明受众、平台、时长、素材和目标，Skill 会生成可以逐步确认的工作文档和小样。"}},{"@type":"Question","name":"可以使用自己的素材吗？","acceptedAnswer":{"@type":"Answer","text":"可以。图片、录屏和已有视频可以成为成片里的主要证据。"}},{"@type":"Question","name":"声音和画风可以换吗？","acceptedAnswer":{"@type":"Answer","text":"可以。定稿前可更换音色、调整音乐音效、切换模板或添加自定义风格。"}}]}]}
     </script>
-    <script src="../site.js?v=20250819" defer></script>
+    <script src="../site.js?v=20260821b" defer></script>
   </head>
   <body>
-    <a class="skip-link" href="#main">跳到主要内容</a>
-    <header class="site-header" data-header>
-      <a class="brand" href="#top" aria-label="Agentic Video Foundry 首页"><span class="brand-mark" aria-hidden="true">AV</span><span>AGENTIC VIDEO FOUNDRY</span></a>
-      <nav class="site-nav" aria-label="主要导航"><a href="#workflow">工作流</a><a href="#audio-providers">音频</a><a href="#style-presets">风格</a><a href="#evidence">看成片</a><a href="#case-study">案例</a><a href="https://github.com/ZetaZeroHub/agentic-video-foundry">GitHub</a><a class="language-link" href="../" lang="en" hreflang="en">EN</a><a class="nav-cta" href="#install">安装 Skill</a></nav>
-    </header>
+    <a class="skip-link" href="#main">跳到正文</a>
+    <header class="site-header" data-header><a class="brand" href="#top" aria-label="Agentic Video Foundry 首页"><span class="brand-mark">AV</span><span>Agentic Video Foundry</span></a><button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="site-nav">菜单</button><nav class="site-nav" id="site-nav" data-nav aria-label="主导航"><a href="#film">看成片</a><a href="#diagnosis">怎么做</a><a href="#styles">风格</a><a href="#install" class="nav-cta">安装</a><a href="https://github.com/ZetaZeroHub/agentic-video-foundry">GitHub</a><a class="language-link" href="../" hreflang="en" lang="en">EN</a></nav></header>
     <main id="main">
-      <section class="hero" id="top" aria-labelledby="hero-title">
-        <div class="hero-copy"><p class="eyebrow">这套 SKILL 正在剪自己</p><h1 id="hero-title">一句需求<span>到验收成片</span></h1><p class="hero-lead">Agentic Video Foundry 是开源的 Agent Skill，把脚本、真实演示、AI 口播、音乐、互动音效、精准字幕、确定性逐帧合成与质量验收收进一条可复用的视频生产线。</p><div class="audio-provider-callout" aria-label="AI 音频供应商"><span class="provider-kicker">AI 音频多模态</span><span class="provider-pill"><img src="../assets/brands/elevenlabs.svg" alt="" />ElevenLabs</span><span class="provider-or">或</span><span class="provider-pill"><img src="../assets/brands/volcengine-color.svg" alt="" />火山引擎</span></div><div class="hero-actions"><a class="button button-primary" href="#install">立即安装</a><a class="button button-secondary" href="#evidence">看真实成片</a></div><div class="agent-compatibility" aria-label="兼容的 coding agent 环境"><span>可在这些工具中调用</span><div class="agent-logo-row"><span><img src="../assets/brands/codex-color.svg" alt="" />Codex</span><span><img src="../assets/brands/claudecode-color.svg" alt="" />Claude Code</span><span><img src="../assets/brands/trae-color.svg" alt="" />Trae</span><span><img src="../assets/brands/gemini-color.svg" alt="" />Gemini CLI</span><span><img src="../assets/brands/kimi-color.svg" alt="" />Kimi Code</span><span><img src="../assets/brands/minimax-color.svg" alt="" />MiniMax</span></div></div></div>
-        <div class="hero-stage" aria-label="Agentic Video Foundry 制作流程示意"><div class="browser-card"><div class="browser-dots" aria-hidden="true"><i></i><i></i><i></i></div><p class="terminal-line"><span class="terminal-prompt">$</span> 使用 Agentic Video Foundry，制作一条介绍你自己的宣传片。</p><div class="build-status"><span class="status-dot" aria-hidden="true"></span><strong>正在生成可审计的视频工程</strong></div><ol class="build-steps" aria-label="制作步骤"><li class="is-done">brief</li><li class="is-done">storyboard</li><li class="is-done">voice</li><li class="is-active">timeline</li><li>render</li><li>audit</li></ol><div class="mini-output"><span>9 段独立 MP4</span><span>4 轨可编辑音频</span></div></div><div class="burst burst-one" aria-hidden="true">真实演示！</div><div class="burst burst-two" aria-hidden="true">逐帧可复现</div></div>
-      </section>
-      <section class="proof-strip" aria-label="核心能力数字"><article><strong>1</strong><span>个主时间轴</span></article><article><strong>2</strong><span>套音频后端</span></article><article><strong>3</strong><span>类场景路线</span></article><article><strong>9</strong><span>段模块化成片</span></article></section>
-      <section class="section workflow-section" id="workflow" aria-labelledby="workflow-title">
-        <div class="section-heading"><div><p class="section-kicker">THE WORKFLOW</p><h2 id="workflow-title">不是堆特效<br />是做出证据链</h2></div><p>每个能力都对应一个真实动作和真实产物。动效只负责解释、裁切和聚焦，不替代本该出现的产品演示。</p></div>
-        <div class="workflow-grid">
-          <article class="workflow-card card-paper"><span class="card-number">01</span><p class="card-label">BRIEF</p><h3>诊断任务</h3><p>锁定受众、平台、时长、传播结论、CTA 与必须出现的证据。</p><ul><li>一句话目标</li><li>证据计划</li><li>明确排除项</li></ul></article>
-          <article class="workflow-card card-cyan"><span class="card-number">02</span><p class="card-label">DESIGN</p><h3>分镜与画风</h3><p>先定义镜头任务，再选择手撕纸、波普艺术或真实产品演示。</p><ul><li>每镜一个 Hero</li><li>风格 preset</li><li>代表帧</li></ul></article>
-          <article class="workflow-card card-yellow"><span class="card-number">03</span><p class="card-label">AUDIO</p><h3>生成、试听、对齐</h3><p>在 ElevenLabs 与火山引擎之间路由 AI 口播、多样音色、背景音乐和互动音效，再由真实音频时间戳驱动字幕与场景。</p><ul><li>多音色试听</li><li>AI BGM + 互动音效</li><li>音频与字幕严格对齐</li></ul></article>
-          <article class="workflow-card card-red"><span class="card-number">04</span><p class="card-label">ROUTING</p><h3>场景各司其职</h3><p>Remotion 管主时间轴，Lottie 和 HyperFrames 只做合适的支线场景。</p><ul><li>单一主链</li><li>冻结交换资产</li><li>最终复验</li></ul></article>
-          <article class="workflow-card card-blue"><span class="card-number">05</span><p class="card-label">RENDER</p><h3>确定性合成</h3><p>帧驱动动画、字幕、音效落点和批量变体都能稳定复现。</p><ul><li>时间轴数据化</li><li>无随机漂移</li><li>静帧预检</li></ul></article>
-          <article class="workflow-card card-white"><span class="card-number">06</span><p class="card-label">DELIVERY</p><h3>验收再交付</h3><p>完整观看、手机外放、编码、响度、真峰值与 manifest 缺一不可。</p><ul><li>视觉 QA</li><li>声音 QA</li><li>可编辑资产</li></ul></article>
-        </div>
-      </section>
-      <section class="section audio-providers-section" id="audio-providers" aria-labelledby="audio-providers-title">
-        <div class="section-heading"><div><p class="section-kicker">AUDIO BACKENDS</p><h2 id="audio-providers-title">两套音频后端<br />不是换一个 URL</h2></div><p>ElevenLabs 与火山豆包语音是可替换的音频后端，不是可互换的 URL。每个供应商把真实能力映射到管线中的真实角色。</p></div>
-        <div class="providers-grid">
-          <article class="provider-card provider-elevenlabs">
-            <div class="provider-header"><span class="provider-badge">供应商 A</span><h3>ElevenLabs</h3></div>
-            <ul class="provider-capabilities">
-              <li><span class="cap-role">TTS</span> 带字符或词级对齐的时间戳旁白</li>
-              <li><span class="cap-role">MUSIC</span> 带结构与时长提示的 Music API</li>
-              <li><span class="cap-role">SFX</span> 精确落点的 Sound Effects API</li>
-              <li><span class="cap-role">VOICE</span> Voice Design 与 Library 自定义音色</li>
-            </ul>
-          </article>
-          <article class="provider-card provider-volcengine">
-            <div class="provider-header"><span class="provider-badge">供应商 B</span><h3>火山豆包语音</h3></div>
-            <ul class="provider-capabilities">
-              <li><span class="cap-role">TTS</span> Seed Audio TTS 带句/词时间戳</li>
-              <li><span class="cap-role">MUSIC</span> 纯提示词驱动的音乐生成</li>
-              <li><span class="cap-role">SFX</span> 纯提示词驱动的音效生成</li>
-              <li><span class="cap-role">VOICE</span> 音色设计与授权样本声音复刻</li>
-            </ul>
-          </article>
-        </div>
-        <div class="capability-matrix" role="table" aria-label="音频供应商能力矩阵">
-          <div class="matrix-row matrix-header" role="row">
-            <div class="matrix-cell matrix-task" role="columnheader">任务</div>
-            <div class="matrix-cell matrix-provider" role="columnheader">ElevenLabs</div>
-            <div class="matrix-cell matrix-provider" role="columnheader">火山豆包语音</div>
-          </div>
-          <div class="matrix-row" role="row">
-            <div class="matrix-cell matrix-task" role="cell">30-90 秒旁白</div>
-            <div class="matrix-cell" role="cell">Timestamped TTS</div>
-            <div class="matrix-cell" role="cell">Seed Audio TTS</div>
-          </div>
-          <div class="matrix-row" role="row">
-            <div class="matrix-cell matrix-task" role="cell">字幕时间</div>
-            <div class="matrix-cell" role="cell">字符级 alignment</div>
-            <div class="matrix-cell" role="cell">enable_subtitle=true</div>
-          </div>
-          <div class="matrix-row" role="row">
-            <div class="matrix-cell matrix-task" role="cell">背景音乐</div>
-            <div class="matrix-cell" role="cell">Music API</div>
-            <div class="matrix-cell" role="cell">纯提示词生成</div>
-          </div>
-          <div class="matrix-row" role="row">
-            <div class="matrix-cell matrix-task" role="cell">音效</div>
-            <div class="matrix-cell" role="cell">Sound Effects API</div>
-            <div class="matrix-cell" role="cell">纯提示词生成</div>
-          </div>
-          <div class="matrix-row" role="row">
-            <div class="matrix-cell matrix-task" role="cell">音色设计</div>
-            <div class="matrix-cell" role="cell">Voice Design/Library</div>
-            <div class="matrix-cell" role="cell">voice_design 接口</div>
-          </div>
-          <div class="matrix-row" role="row">
-            <div class="matrix-cell matrix-task" role="cell">声音复刻</div>
-            <div class="matrix-cell" role="cell">计划 + 授权</div>
-            <div class="matrix-cell" role="cell">voice_clone 接口</div>
-          </div>
-        </div>
-        <div class="provider-warning"><span class="warning-icon" aria-hidden="true">!</span><p>切换供应商意味着重建音频系统：新时长、新字幕时间、新增益校准、重新测量 LUFS 与 dBTP。旧时间轴数值一律作废。</p></div>
-      </section>
-      <section class="section style-presets-section" id="style-presets" aria-labelledby="style-presets-title" data-preset-active="comic-pop-art-motion">
-        <div class="section-heading"><div><p class="section-kicker">STYLE PRESETS</p><h2 id="style-presets-title">两套风格 preset<br />不是换一套配色</h2></div><p>每个风格 preset 控制材质、配色、排版、运动语法、密度限制与硬失败。点击下方切换，看 preset 接管本区视觉。</p></div>
-        <div class="preset-tabs" role="tablist" aria-label="风格 preset 选择器">
-          <button class="preset-tab is-active" type="button" role="tab" aria-selected="true" aria-controls="preset-panel-pop" id="preset-tab-pop" data-preset="comic-pop-art-motion">波普漫画</button>
-          <button class="preset-tab" type="button" role="tab" aria-selected="false" aria-controls="preset-panel-paper" id="preset-tab-paper" data-preset="flat-paper-collage-stop-motion">手撕纸拼贴</button>
-        </div>
-        <div class="preset-panels">
-          <div class="preset-panel is-active" id="preset-panel-pop" role="tabpanel" aria-labelledby="preset-tab-pop" data-preset-panel="comic-pop-art-motion">
-            <div class="preset-visual preset-visual-pop" aria-hidden="true">
-              <div class="preset-demo-panel">
-                <div class="demo-headline">BOLD</div>
-                <div class="demo-subline">四色印刷</div>
-                <div class="demo-halftone"></div>
-                <div class="demo-burst">SNAP!</div>
-              </div>
-            </div>
-            <div class="preset-rules">
-              <article class="rule-card rule-palette"><h4>配色</h4><div class="swatch-grid"><span class="swatch" style="background:#101010" title="墨黑"></span><span class="swatch" style="background:#FFF7E8" title="纸白"></span><span class="swatch" style="background:#FFD400" title="电光黄"></span><span class="swatch" style="background:#00B7D9" title="亮青"></span><span class="swatch" style="background:#F2385A" title="热红"></span><span class="swatch" style="background:#2457D6" title="钴蓝"></span></div><p>墨黑、暖纸白、电光黄、亮青、热红、钴蓝。同屏最多三种高饱和色。</p></article>
-              <article class="rule-card rule-motion"><h4>运动</h4><p>高能 snap。6 帧基础单位、12% Hero 过冲、18 帧结果停顿。仅 panel slam、ink wipe、match cut 转场。</p></article>
-              <article class="rule-card rule-density"><h4>密度</h4><p>每帧 1 个 Hero、最多 2 个支持物、高潮最多 3 格。Hero 占画面 40-68%。</p></article>
-              <article class="rule-card rule-forbidden"><h4>禁止项</h4><p>禁止 3D 翻转、液体变形、高频闪烁、持续镜头呼吸、无种子抖动。</p></article>
-              <article class="rule-card rule-usage"><h4>用法</h4><p><code>assets/style-presets/comic-pop-art-motion.json</code></p><p>实现前复制到项目。仅可覆盖配色与运动 token。不得覆盖单一 Hero、三色上限、证据可读性或确定性帧驱动。</p></article>
-            </div>
-          </div>
-          <div class="preset-panel" id="preset-panel-paper" role="tabpanel" aria-labelledby="preset-tab-paper" data-preset-panel="flat-paper-collage-stop-motion" hidden>
-            <div class="preset-visual preset-visual-paper" aria-hidden="true">
-              <div class="preset-demo-panel">
-                <div class="demo-headline-paper">Torn</div>
-                <div class="demo-subline-paper">定格拼贴</div>
-                <div class="demo-torn-edge"></div>
-                <div class="demo-tape"></div>
-              </div>
-            </div>
-            <div class="preset-rules">
-              <article class="rule-card rule-palette"><h4>配色</h4><div class="swatch-grid"><span class="swatch" style="background:#25221F" title="墨黑"></span><span class="swatch" style="background:#F5EDD8" title="纸色"></span><span class="swatch" style="background:#8B6340" title="泥土棕"></span><span class="swatch" style="background:#5C8A3A" title="草绿"></span><span class="swatch" style="background:#7EC8E3" title="天蓝"></span><span class="swatch" style="background:#F0C75E" title="暖黄"></span></div><p>暖纤维纸、泥土棕、草绿、天蓝、暖黄。低饱和复古胶印感。</p></article>
-              <article class="rule-card rule-motion"><h4>运动</h4><p>定格停顿。2-6 帧不规则停顿、6px 微摆、最大 3° 旋转、单次落位过冲。Paper wipe、hand-set slide、page push 转场。</p></article>
-              <article class="rule-card rule-density"><h4>密度</h4><p>每帧 1 个 Hero、最多 2 个支持物、最多 6 组纸片。主体占画面 35-60%。</p></article>
-              <article class="rule-card rule-forbidden"><h4>禁止项</h4><p>禁止连续漂浮、形状变形、无种子随机抖动、所有元素同时运动。</p></article>
-              <article class="rule-card rule-usage"><h4>用法</h4><p><code>assets/style-presets/flat-paper-collage-stop-motion.json</code></p><p>实现前复制到项目。仅可覆盖配色、纹理透明度、边缘粗糙度、停顿模式。不得覆盖单一 Hero、中文优先、刚性纸片、确定性运动或证据保留。</p></article>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="section evidence-section" id="evidence" aria-labelledby="evidence-title">
-        <div class="section-heading evidence-heading"><div><p class="section-kicker">WATCH THE OUTPUT</p><h2 id="evidence-title">让成片自己证明</h2></div><p>滑到画布即自动静音播放。这里放的是这套工作流真正交付的完整成片，不是为官网临时拼出的概念动画。</p></div>
-        <div class="evidence-layout"><div class="evidence-video-card" data-video-card><div class="evidence-video-toolbar"><span>FINAL CUT / V6</span><span class="video-state" data-video-state>等待进入画布</span></div><div class="evidence-video-frame"><video data-evidence-video muted playsinline preload="metadata" aria-label="Agentic Video Foundry 工作流制作的完整宣传片"><source src="../assets/agentic-video-foundry-demo.mp4" type="video/mp4" />你的浏览器暂不支持 HTML5 视频播放。</video><div class="video-badge">进入视口自动播放 · 默认静音</div><div class="video-controls" aria-label="视频控制"><button type="button" data-video-toggle aria-label="播放视频">播放</button><button type="button" data-video-mute aria-label="开启视频声音">开启声音</button></div></div><p class="evidence-video-caption">从策划、真实演示、配音和音乐，到逐帧合成、字幕、分轨与质检——168 秒母版在这里完整呈现。</p></div><div class="evidence-notes"><article><strong>168 SEC</strong><h3>完整成片，不是样机</h3><p>开场、工作流、分轨交付和真实案例都在同一条主时间轴里。</p></article><article><strong>9 SCENES</strong><h3>章节可以独立重组</h3><p>每章均可单独导出 MP4，并保留旁白、BGM、SFX、案例原声与字幕。</p></article><article><strong>PASS</strong><h3>交付前经过硬验收</h3><p>1080×1920、30 fps、响度、真峰值、字幕和切点爆音均完成检查。</p></article></div></div>
-      </section>
-      <section class="section self-demo" aria-labelledby="self-demo-title"><div class="self-demo-copy"><p class="section-kicker">THE META DEMO</p><h2 id="self-demo-title">用自己<br />剪自己</h2><p>这条宣传片来自同一个 Skill、同一份脚本和同一个主时间轴。提示词、设计决策、真实录屏、声音、渲染和验收都能回到实际产物。</p></div><div class="loop-diagram" aria-label="自我演示闭环"><span>需求</span><i aria-hidden="true">→</i><span>Skill</span><i aria-hidden="true">→</i><span>工程</span><i aria-hidden="true">→</i><span>成片</span><i aria-hidden="true">↺</i></div></section>
-      <section class="section case-section" id="case-study" aria-labelledby="case-title"><div class="section-heading case-heading"><div><p class="section-kicker">CASE STUDY</p><h2 id="case-title">先证明流程<br />再证明结果</h2></div><p>同一套工作流用于组织 AI 游戏平台宣传片的素材、画面、声音和节奏。</p></div><div class="case-panels" aria-label="AI 游戏平台宣传片内容概览"><article class="case-panel case-pink"><span>01</span><h3>创作游戏<br />如此简单</h3><p>用高反差钩子建立问题。</p></article><article class="case-panel case-cyan"><span>02</span><h3>一句话<br />重塑万物</h3><p>把能力压缩成可理解的操作。</p></article><article class="case-panel case-yellow"><span>03</span><h3>真实可玩<br />结果</h3><p>用最终体验完成证据闭环。</p></article></div><p class="case-note">付费和私有案例媒体不随公开 Skill 仓库分发；官网只展示批准公开的部署媒体与经验证的制作事实。</p></section>
-      <section class="section faq-section" id="faq" aria-labelledby="faq-title"><div class="section-heading"><div><p class="section-kicker">FAQ</p><h2 id="faq-title">安装前最常问的四件事</h2></div><p>直接说明兼容性、渲染路线、凭据边界，以及这套工作流对“完成”的定义。</p></div><div class="faq-grid"><article><h3>Agentic Video Foundry 是什么？</h3><p>它是开源 Agent Skill，负责协调任务诊断、分镜、真实演示、配音、音乐、音效、字幕、渲染、视觉复核、声音测量与可编辑交付。</p></article><article><h3>哪些 coding agents 可以使用？</h3><p>当前目标环境包括 Codex、Claude Code、Trae、Gemini CLI、Kimi Code、MiniMax，以及其他可加载 Agent Skills 或仓库指令的工具。</p></article><article><h3>哪个渲染器负责主时间轴？</h3><p>Remotion 默认负责唯一主合成。Text-to-Lottie 和 HyperFrames 是可选资产或场景路线，不会制造互相竞争的主时间轴。</p></article><article><h3>API 密钥和付费媒体会公开吗？</h3><p>不会。凭据保存在系统钥匙串或环境变量中；付费和私有媒体不进入 Git 历史，只在批准后进入单独部署包。</p></article></div></section>
-      <section class="section install-section" id="install" aria-labelledby="install-title"><div><p class="eyebrow">MIT · OPEN SOURCE</p><h2 id="install-title">装上工作流<br />交付下一条成片</h2><p>全局安装后，在兼容 Agent Skills 的工具中描述目标、平台、时长、素材与视觉方向。</p></div><div class="install-panel"><p>全局安装</p><pre><code data-install-command>npx skills add ZetaZeroHub/agentic-video-foundry@agentic-video-foundry -g -y</code></pre><button class="copy-button" type="button" data-copy-button aria-describedby="copy-status">复制安装命令</button><p class="copy-status" id="copy-status" role="status" aria-live="polite"></p><a class="repo-link" href="https://github.com/ZetaZeroHub/agentic-video-foundry">查看 GitHub 仓库 →</a></div></section>
+      <section class="hero" id="top" aria-labelledby="hero-title"><div class="hero-copy"><p class="eyebrow">这条宣传片，是它自己做的</p><h1 id="hero-title">说清你想做什么<span>拿到能发布的视频</span></h1><p class="hero-lead">它会先问清楚发给谁、发到哪、讲多久，再帮你写脚本、做分镜、配声音、排字幕，最后把完整视频和可编辑素材一起交给你。</p><div class="hero-actions"><a class="button button-primary" href="#film">先看完整成片</a><a class="button button-secondary" href="#install">安装 Skill</a></div><p class="case-proof">本页成片实测：<strong>半天完成</strong> · <strong>4+ 轮对话</strong> · <strong>9 段可拆</strong></p></div><picture class="mascot-stage mascot-stage-hero" data-mascot="intro" data-mascot-once><source srcset="../assets/mascot/intro-1.webp" type="image/webp" /><img src="../assets/mascot/intro-1.png" width="418" height="418" alt="小铸挥手并指向完整成片" fetchpriority="high" /></picture><div class="tool-strip" aria-label="兼容的 AI 工具"><span><img src="../assets/brands/codex-color.svg" alt="" />Codex</span><span><img src="../assets/brands/claudecode-color.svg" alt="" />Claude Code</span><span><img src="../assets/brands/trae-color.svg" alt="" />Trae</span><span><img src="../assets/brands/gemini-color.svg" alt="" />Gemini CLI</span><span><img src="../assets/brands/kimi-color.svg" alt="" />Kimi Code</span><span><img src="../assets/brands/minimax-color.svg" alt="" />MiniMax</span><span><img src="../assets/brands/workbuddy.svg" alt="" />WorkBuddy</span><span><img src="../assets/brands/manus.svg" alt="" />Manus</span></div></section>
+      <section class="section film-section" id="film" aria-labelledby="film-title"><div class="section-heading"><div><p class="section-kicker">完整成片</p><h2 id="film-title">这套 Skill 到底能做什么，看完就知道</h2></div><p>下面这条视频就是它从一句需求开始做出来的。默认静音，想听配音和音效时再打开声音。</p></div><div class="evidence-video-card"><div class="evidence-video-toolbar"><span>最终成片 / V6</span><span data-video-duration>正在读取时长…</span></div><div class="evidence-video-frame"><video data-evidence-video controls muted playsinline preload="metadata" poster="../assets/og-cover.png" aria-label="Agentic Video Foundry 制作的完整宣传片"><source src="../assets/agentic-video-foundry-demo.mp4" type="video/mp4" />你的浏览器暂不支持视频播放。</video><p class="media-error" data-video-error hidden>视频暂时无法加载。<a href="https://github.com/ZetaZeroHub/agentic-video-foundry">可以先去 GitHub 查看项目。</a></p></div><p class="evidence-video-caption">这条介绍自己的视频，从策划、配音、剪辑、检查到交付，都由同一套 Skill 完成。</p></div></section>
+      <section class="section diagnosis-section" id="diagnosis" aria-labelledby="diagnosis-title"><div class="section-with-mascot"><div><p class="section-kicker">开始前先问三个问题</p><h2 id="diagnosis-title">发给谁，发到哪，准备讲多久</h2><p class="section-lead">同一个想法，发小红书、抖音和 B 站，开头、信息量和节奏都不一样。</p><div class="method-grid"><article class="method-card"><strong>给新手</strong><p>先讲结果，需要时再解释术语。</p></article><article class="method-card"><strong>给专业用户</strong><p>保留方法、证据和有用参数。</p></article><article class="method-card"><strong>做短视频</strong><p>更快进入重点，每个镜头只做一件事。</p></article><article class="method-card"><strong>做长视频</strong><p>留出空间，把背景、证据和完整过程讲清楚。</p></article></div></div><picture class="mascot-stage" data-mascot="diagnosis"><source srcset="../assets/mascot/diagnosis-1.webp" type="image/webp" /><img src="../assets/mascot/diagnosis-1.png" width="418" height="418" loading="lazy" alt="小铸正在思考受众、平台和时长" /></picture></div></section>
+      <section class="section documents-section" id="documents" aria-labelledby="documents-title"><div class="section-heading"><div><p class="section-kicker">四份工作文档</p><h2 id="documents-title">四份文档，把一句想法变成能执行的方案</h2></div><p>先把思路讲清楚，再花时间铺完整条片。</p></div><div class="section-with-mascot"><div class="document-grid"><article class="document-card"><span>01</span><h3>目标简报</h3><p>这条片给谁看，要让人记住什么。</p></article><article class="document-card"><span>02</span><h3>分镜表</h3><p>每个镜头出现什么，旁白说到哪里。</p></article><article class="document-card"><span>03</span><h3>视觉规范</h3><p>颜色、字体、动效和吉祥物怎么动。</p></article><article class="document-card"><span>04</span><h3>独立小样</h3><p>先把最难的镜头做出来，满意后再铺开。</p></article></div><picture class="mascot-stage" data-mascot="documents"><source srcset="../assets/mascot/documents-1.webp" type="image/webp" /><img src="../assets/mascot/documents-1.png" width="418" height="418" loading="lazy" alt="小铸正在翻阅并核对四份制作文档" /></picture></div></section>
+      <section class="section audio-section" id="audio" aria-labelledby="audio-title"><div class="section-heading"><div><p class="section-kicker">让声音贴合画面</p><h2 id="audio-title">选声音，配旁白，加音乐，再把字幕跟准</h2></div><p>Skill 已经接入 ElevenLabs 和火山引擎。它能试听不同音色，生成旁白、背景音乐和动作音效，再让字幕跟着真实口播走。声音不合适可以换，音乐太小或太抢也可以直接调。</p></div><div class="provider-row" aria-label="已集成的音频供应商"><span><img src="../assets/brands/elevenlabs.svg" alt="" />ElevenLabs</span><span><img src="../assets/brands/volcengine-color.svg" alt="" />火山引擎</span></div><div class="section-with-mascot"><ol class="audio-steps"><li class="audio-step"><strong>01 · 试听</strong><p>先比较多个音色，再决定最终旁白。</p></li><li class="audio-step"><strong>02 · 配音</strong><p>按确定的文案和自然语速生成口播。</p></li><li class="audio-step"><strong>03 · 配乐</strong><p>用音乐和小音效托住动作，不盖住人声。</p></li><li class="audio-step"><strong>04 · 对齐</strong><p>按照真实口播时间放置完整字幕。</p></li></ol><picture class="mascot-stage" data-mascot="audio"><source srcset="../assets/mascot/audio-1.webp" type="image/webp" /><img src="../assets/mascot/audio-1.png" width="418" height="418" loading="lazy" alt="小铸正在试听音色并跟着音乐打拍子" /></picture></div><details class="technical-details"><summary>查看接入细节</summary><p>密钥只从系统钥匙串或环境变量读取。供应商配置、时间戳、声音复刻授权和最终声音复测都有明确检查，不会把凭据写进仓库。</p></details></section>
+      <section class="section styles-section" id="styles" aria-labelledby="styles-title" data-preset-active="pop"><div class="section-heading"><div><p class="section-kicker">视觉风格</p><h2 id="styles-title">先选一种，也可以加自己的</h2></div><p>波普艺术适合节奏快、颜色亮的宣传片；手撕纸适合更温和、更有质感的故事。每套模板都会约束配色、字体和动作方式，避免每个镜头各长各的。</p></div><div class="preset-tabs" role="tablist" aria-label="视觉风格示例"><button class="preset-tab is-active" type="button" role="tab" aria-selected="true" aria-controls="preset-panel-pop" id="preset-tab-pop" data-preset="pop">波普艺术</button><button class="preset-tab" type="button" role="tab" aria-selected="false" aria-controls="preset-panel-paper" id="preset-tab-paper" data-preset="paper" tabindex="-1">手撕纸拼贴</button></div><div class="preset-panels"><article class="preset-panel is-active preset-pop" id="preset-panel-pop" role="tabpanel" aria-labelledby="preset-tab-pop" data-preset-panel="pop"><div class="style-demo"><span class="style-word">要醒目</span><strong>就大胆一点</strong><i>快切 · 亮色 · 大字</i></div><details class="technical-details"><summary>这套模板如何保持一致</summary><p>统一少量配色、粗体排版、硬朗动作、信息密度和文字安全区。也可以单独加入新模板，不必推翻整条工作流。</p></details></article><article class="preset-panel preset-paper" id="preset-panel-paper" role="tabpanel" aria-labelledby="preset-tab-paper" data-preset-panel="paper" hidden><div class="style-demo paper-demo"><span class="paper-piece">一个想法</span><strong>慢慢成形</strong><i>刚性纸片 · 定格动作 · 温暖质感</i></div><details class="technical-details"><summary>这套模板如何保持一致</summary><p>统一撕边、纸张纹理、平面层级、克制配色和离散定格。纸片只做平移、旋转和等比缩放，不弯曲、不融化、不漂移。</p></details></article></div></section>
+      <section class="section quality-section" id="quality" aria-labelledby="quality-title"><div class="section-with-mascot"><div><p class="section-kicker">交付前再检查</p><h2 id="quality-title">从头看一遍，再从头听一遍</h2><p class="section-lead">字幕有没有少字，手机外放能不能听清，转场有没有爆音，文件还能不能继续剪。都过了，再交付。</p><div class="quality-grid"><article class="quality-card"><strong>字幕完整</strong><p>不截断句子，也不漏字。</p></article><article class="quality-card"><strong>手机外放听得清</strong><p>音乐听得到，但不会盖住人声。</p></article><article class="quality-card"><strong>转场干净</strong><p>没有爆音、闪屏或意外空档。</p></article><article class="quality-card"><strong>方便继续剪</strong><p>交付成片、章节、音频分轨和字幕。</p></article></div></div><picture class="mascot-stage" data-mascot="qc"><source srcset="../assets/mascot/qc-1.webp" type="image/webp" /><img src="../assets/mascot/qc-1.png" width="418" height="418" loading="lazy" alt="小铸拿着放大镜检查交付内容" /></picture></div><details class="technical-details"><summary>查看验收细节</summary><p>技术报告会记录画幅、帧率、编码、声音测量、字幕时间、代表帧和完整观看结果。</p></details></section>
+      <section class="section faq-section" id="faq" aria-labelledby="faq-title"><div class="section-heading"><div><p class="section-kicker">常见问题</p><h2 id="faq-title">开始之前，大家最常问这些</h2></div></div><div class="faq-list"><details><summary>我不会剪辑，也能用吗？</summary><p>可以。先说清受众、平台、时长、素材和想要的结果，Skill 会把它们变成可以逐步确认的文档和小样。</p></details><details><summary>可以带自己的图片、录屏和已有视频吗？</summary><p>可以。真实产品画面和你提供的素材可以成为主角，不会被一堆装饰动效盖住。</p></details><details><summary>声音和画风不喜欢，能换吗？</summary><p>可以。定稿前能换音色、调音乐、改音效、切模板，也能加入自己的风格。</p></details><details><summary>做完以后还能继续修改吗？</summary><p>可以。交付内容可以包括完整视频、独立章节、旁白、音乐、音效、字幕和合成工程。</p></details><details><summary>支持哪些 AI 工具？</summary><p>Codex、Claude Code、Trae、Gemini CLI、Kimi Code、MiniMax、WorkBuddy、Manus，以及其他能加载 Agent Skills 或仓库指令的工具。</p></details><details><summary>使用 ElevenLabs 或火山引擎需要额外费用吗？</summary><p>Skill 本身开源。音频生成费用取决于你接入的账号和套餐，付费生成前会先做短样试听。</p></details></div></section>
+      <section class="section install-section" id="install" aria-labelledby="install-title"><div><p class="eyebrow">MIT · 开源</p><h2 id="install-title">把它装进你常用的 AI 工具</h2><p>复制命令，重启工具，再告诉它你想做什么视频。</p><ol class="install-steps"><li>复制全局安装命令。</li><li>重启 Codex、Claude Code、Trae、WorkBuddy、Manus 或其他兼容工具。</li><li>告诉它受众、平台、时长、素材和视觉方向。</li></ol></div><div class="install-panel"><p>全局安装</p><pre><code data-install-command>npx skills add ZetaZeroHub/agentic-video-foundry@agentic-video-foundry -g -y</code></pre><button class="copy-button" type="button" data-copy-button aria-describedby="copy-status">复制安装命令</button><p class="copy-status" id="copy-status" role="status" aria-live="polite"></p><a class="repo-link" href="https://github.com/ZetaZeroHub/agentic-video-foundry">查看 GitHub 仓库 →</a></div></section>
     </main>
-    <footer class="site-footer"><span>AGENTIC VIDEO FOUNDRY</span><span>一句需求 → 验收成片</span><a href="https://github.com/ZetaZeroHub/agentic-video-foundry/blob/main/LICENSE">MIT License</a></footer>
+    <footer class="site-footer"><span>AGENTIC VIDEO FOUNDRY</span><a href="https://video.zzh.app/zh/">video.zzh.app</a><a href="https://github.com/ZetaZeroHub/agentic-video-foundry">GitHub</a><a href="https://github.com/ZetaZeroHub/agentic-video-foundry/blob/main/LICENSE">MIT License</a><a class="language-link" href="../" hreflang="en" lang="en">EN</a></footer>
+    <script type="module" src="../mascot.mjs?v=20260821b"></script>
   </body>
 </html>

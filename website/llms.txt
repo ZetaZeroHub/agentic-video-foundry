@@ -1,6 +1,6 @@
 # Agentic Video Foundry
 
-Agentic Video Foundry is an open-source Agent Skill for producing verified short videos with coding agents. It connects creative briefs, storyboards, real product demonstrations, voice, music, sound effects, subtitles, deterministic rendering, visual review, audio measurement, and editable delivery.
+Agentic Video Foundry is an open-source Agent Skill that turns one clear request into a short video people can review, publish, and keep editing. It creates a goal brief, storyboard, visual guide, independent prototype, narration, music, sound effects, captions, and final delivery checks.
 
 ## Canonical resources
 
@@ -16,11 +16,10 @@ Agentic Video Foundry is an open-source Agent Skill for producing verified short
 
 ## Verified design boundaries
 
-- Remotion is the default master timeline.
-- Text-to-Lottie and HyperFrames are optional asset or scene routes.
-- Real narration timing drives scenes and captions.
+- It starts by defining the audience, publishing platform, and duration.
+- The approved narration timing drives scenes and complete caption lines.
 - API keys remain in the OS keychain or environment variables.
 - Paid and private media is not distributed through Git history.
 - Completion requires a full visual and audio review plus technical checks.
 - Audio generation can route ElevenLabs or Volcengine for narration, voice auditions, music, and sound effects; captions are aligned to generated audio timestamps.
-- Target agent environments include Codex, Claude Code, Trae, Gemini CLI, Kimi Code, MiniMax, and other tools that can load Agent Skills or repository instructions.
+- Target agent environments include Codex, Claude Code, Trae, Gemini CLI, Kimi Code, MiniMax, WorkBuddy, Manus, and other tools that can load Agent Skills or repository instructions.

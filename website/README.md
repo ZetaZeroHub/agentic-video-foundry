@@ -16,7 +16,9 @@ The evidence section expects a deployment-only video at:
 website/assets/agentic-video-foundry-demo.mp4
 ```
 
-The video is intentionally ignored by Git. Copy an approved public master to that path before packaging or deploying the site. It starts muted when at least 45% of the player enters the viewport, pauses after leaving, and does not autoplay when the visitor requests reduced motion.
+The video is intentionally ignored by Git. Copy an approved public master to that path before packaging or deploying the site. The current deployment master is V6: 255.067 seconds, 1080 × 1920, H.264/AAC, SHA-256 `61ccb5645f00c68ca36f616d8d20a1620fb9d877ef653e2d1d024787ae366648`. It starts muted when most of the player enters the viewport, pauses after leaving, and does not autoplay when the visitor requests reduced motion.
+
+The mascot uses five three-frame stop-motion actions from `assets/mascot/`. WebP is served first with PNG fallback. Only the most visible mascot animates, and animation pauses in background tabs or when reduced motion is requested.
 
 ## Publish
 
@@ -31,7 +33,7 @@ Serve the directory root as `https://video.zzh.app/`; do not serve `website/` as
 - `llms.txt` summarizes the project and canonical resources for AI agents.
 - Each page includes Open Graph, Twitter Card, and JSON-LD metadata.
 - `favicon.svg`, `assets/apple-touch-icon.png`, and `assets/og-cover.png` share the AV identity.
-- `assets/brands/` contains the pinned logo assets used for audio-provider and coding-agent compatibility labels; provenance and the non-endorsement boundary are documented alongside the files.
+- `assets/brands/` contains pinned logo assets for Codex, Claude Code, Trae, Gemini CLI, Kimi Code, MiniMax, WorkBuddy, Manus, ElevenLabs, and Volcengine. Provenance and the non-endorsement boundary are documented alongside the files.
 
 ## Safety boundary
 

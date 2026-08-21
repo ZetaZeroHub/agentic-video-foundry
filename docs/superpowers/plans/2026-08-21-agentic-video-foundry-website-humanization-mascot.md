@@ -4,7 +4,7 @@
 
 **Goal:** Rebuild the bilingual static website around a beginner-first story, place the complete V6 film immediately after the hero, and add accessible stop-motion loops using the existing 小铸 mascot frames.
 
-**Architecture:** Keep the site dependency-free: two locale-specific HTML documents share one stylesheet and two small JavaScript modules. `site.js` owns navigation, copy, video, tabs, and disclosure behavior; `mascot.js` owns stop-motion state and viewport lifecycle. A Node test suite treats content order, bilingual parity, metadata, asset references, and animation timing as contracts.
+**Architecture:** Keep the site dependency-free: two locale-specific HTML documents share one stylesheet and two small JavaScript modules. `site.js` owns navigation, copy, video, tabs, and disclosure behavior; `mascot.mjs` owns stop-motion state and viewport lifecycle. A Node test suite treats content order, bilingual parity, metadata, asset references, and animation timing as contracts.
 
 **Tech Stack:** Semantic HTML5, CSS custom properties and media queries, browser-native JavaScript, IntersectionObserver, Page Visibility API, Node `node:test`, `cwebp`, `ffprobe`, Python static server, Git.
 
@@ -16,7 +16,7 @@
 - Modify `website/zh/index.html`: Simplified Chinese page with matching semantics and native Chinese copy.
 - Modify `website/styles.css`: shared pop-art system, responsive layouts, document cards, style previews, disclosures, and mascot slots.
 - Modify `website/site.js`: header menu, language preference, install copy fallback, evidence-video lifecycle, style tabs, and media error states.
-- Create `website/mascot.js`: reusable stop-motion controller and pure timing helpers.
+- Create `website/mascot.mjs`: reusable stop-motion controller and pure timing helpers.
 - Create `website/tests/site-contract.test.mjs`: bilingual structure, content, SEO, asset, and prohibited-jargon regression tests.
 - Create `website/tests/mascot.test.mjs`: pure tests for frame advancement and motion preference.
 - Create `website/assets/mascot/*.png`: transparent source fallbacks copied from the approved V6 project.
@@ -392,7 +392,7 @@ git commit -m "feat: rewrite website for first-time users"
 ### Task 4: Implement the mascot runtime with pure timing tests
 
 **Files:**
-- Create: `website/mascot.js`
+- Create: `website/mascot.mjs`
 - Create: `website/tests/mascot.test.mjs`
 - Modify: `website/index.html`
 - Modify: `website/zh/index.html`
@@ -404,7 +404,7 @@ Create `website/tests/mascot.test.mjs`:
 ```javascript
 import assert from "node:assert/strict";
 import { test } from "node:test";
-import { nextFrameIndex, shouldAnimate } from "../mascot.js";
+import { nextFrameIndex, shouldAnimate } from "../mascot.mjs";
 
 test("frames advance and wrap", () => {
   assert.equal(nextFrameIndex(0, 3), 1);
@@ -427,11 +427,11 @@ Run:
 node --test website/tests/mascot.test.mjs
 ```
 
-Expected: FAIL with `ERR_MODULE_NOT_FOUND` for `website/mascot.js`.
+Expected: FAIL with `ERR_MODULE_NOT_FOUND` for `website/mascot.mjs`.
 
 - [ ] **Step 3: Create the stop-motion controller**
 
-Create `website/mascot.js`:
+Create `website/mascot.mjs`:
 
 ```javascript
 export const nextFrameIndex = (current, count) => (current + 1) % count;
@@ -529,10 +529,10 @@ if (typeof document !== "undefined") bootMascots();
 Add before `</body>` in both locale files:
 
 ```html
-<script type="module" src="./mascot.js"></script>
+<script type="module" src="./mascot.mjs"></script>
 ```
 
-Use `../mascot.js` in `website/zh/index.html`.
+Use `../mascot.mjs` in `website/zh/index.html`.
 
 - [ ] **Step 5: Run the mascot tests**
 
@@ -547,7 +547,7 @@ Expected: 2 tests pass.
 - [ ] **Step 6: Commit the mascot runtime**
 
 ```bash
-git add website/mascot.js website/tests/mascot.test.mjs website/index.html website/zh/index.html
+git add website/mascot.mjs website/tests/mascot.test.mjs website/index.html website/zh/index.html
 git diff --cached --check
 git commit -m "feat: animate mascot in visible sections"
 ```
@@ -680,7 +680,7 @@ git commit -m "feat: refine website interaction and layout"
 
 - [ ] **Step 1: Update page metadata in both locales**
 
-Use a result-first title and description, keep reciprocal canonical/hreflang links, and update Open Graph and Twitter descriptions. Keep the existing `SoftwareApplication`, `HowTo`, and `FAQPage` JSON-LD types, but make their visible claims match the new page. Use ISO 8601 `PT2M48S` for the current 168-second deployment master only after confirming with:
+Use a result-first title and description, keep reciprocal canonical/hreflang links, and update Open Graph and Twitter descriptions. Keep the existing `SoftwareApplication`, `HowTo`, and `FAQPage` JSON-LD types, but make their visible claims match the new page. Use ISO 8601 `PT4M15S` for the current 255-second deployment master only after confirming with:
 
 ```html
 <title>Agentic Video Foundry — Turn one request into a publishable video</title>
@@ -695,7 +695,7 @@ The Chinese metadata is `Agentic Video Foundry——一句需求，做到能发�
 ffprobe -v error -show_entries format=duration -of default=noprint_wrappers=1:nokey=1 website/assets/agentic-video-foundry-demo.mp4
 ```
 
-Expected: `168.000000`. If the deployed master changes, derive and use its confirmed duration instead.
+Expected: approximately `255.066667`. If the deployed master changes, derive and use its confirmed duration instead.
 
 - [ ] **Step 2: Rewrite `website/llms.txt` in plain language**
 
@@ -777,7 +777,7 @@ With keyboard only: open/close mobile navigation, reach the film controls, switc
 
 - [ ] **Step 4: Watch and listen to the full embedded film**
 
-Play the complete 168-second deployment master with sound. Confirm the frame is opaque, the soundtrack is audible without masking narration, no transition contains a click/pop, captions in the film remain readable, and playback reaches the final frame without interruption. This is a manual full-duration gate, not a representative-frame substitute.
+Play the complete 255-second deployment master with sound. Confirm the frame is opaque, the soundtrack is audible without masking narration, no transition contains a click/pop, captions in the film remain readable, and playback reaches the final frame without interruption. This is a manual full-duration gate, not a representative-frame substitute.
 
 - [ ] **Step 5: Run technical media and source checks**
 
@@ -795,7 +795,7 @@ Expected: video reports H.264 720×1280 at 30 fps with AAC and a confirmed durat
 - [ ] **Step 6: Commit acceptance fixes only if needed**
 
 ```bash
-git add website/index.html website/zh/index.html website/styles.css website/site.js website/mascot.js website/README.md website/llms.txt website/tests/site-contract.test.mjs website/tests/mascot.test.mjs website/assets/README.md website/assets/brands/README.md website/assets/brands/workbuddy.svg website/assets/brands/manus.svg website/assets/mascot
+git add website/index.html website/zh/index.html website/styles.css website/site.js website/mascot.mjs website/README.md website/llms.txt website/tests/site-contract.test.mjs website/tests/mascot.test.mjs website/assets/README.md website/assets/brands/README.md website/assets/brands/workbuddy.svg website/assets/brands/manus.svg website/assets/mascot
 git diff --cached --check
 git diff --cached --stat
 git commit -m "fix: close website acceptance gaps"
